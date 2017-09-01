@@ -3,6 +3,9 @@
     "name": "CAPPUCCINO",
     "detail": "All item(s) will be shipped",
     "unitprice": 100,
+    "normalprice": 300,
+    "discount": 10,
+    "discounttype": "%",
     "image": [
         {
             "url": "http://baania.com/sites/default/files/property-project/365/photo/49974.jpg",

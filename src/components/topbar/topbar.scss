@@ -37,7 +37,8 @@ topbar {
         .contact-name {
             margin: 0px;
             font-size: 2.2rem;
-            font-weight: 400;
+            font-weight: 600;
+        
         }
         .rating-col {
             display: flex;
@@ -68,9 +69,23 @@ topbar {
         .contact-description {
             margin: 8px 0px 0px;
             color: $white-d;
+            
+        }
+        .margin-10{
+            margin-top: 10px;
         }
     }
     .color-gold-custom {
         color: gold;
+    }
+    .text-decoration {
+        text-decoration: line-through;
+    }
+    .text-size{
+        font-size: 2.5rem;
+    }
+    .font-wth{
+        color:gold;
+        text-shadow: black;
     }
 }

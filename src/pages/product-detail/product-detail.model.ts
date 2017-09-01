@@ -16,6 +16,9 @@ export class ProductDetailModel {
     relationProducts: Array<RelationProductsModel>;
     selectedsize: string;
     title: string;
+    normalprice:number;
+    discount:number;
+    discounttype:string;
 }
 
 export class ProductDataSize {

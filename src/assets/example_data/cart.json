@@ -2,15 +2,15 @@
     "items": [
         {
             "product": {
-                "name": "Crossfit WorldWide Event",
-                "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-                "price": 1800,
+                "name": "MOCHA (ICE)",
+                "image": "https://s-media-cache-ak0.pinimg.com/originals/d7/4c/a1/d74ca1a52bd5a03cf291d413d1597333.jpg",
+                "price": 100,
                 "normalprice": 20000,
                 "discount": 10,
                 "discounttype": "%",
                 "currency": "THB",
                 "rate": 5,
-                "description": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
+                "description": "Low sugar"
               },
             "unitprice": 1800,
             "qty": 2,
@@ -18,15 +18,15 @@
         },
         {
             "product": {
-                "name": "US Open",
-                "image": "http://www.9digits.com/wp-content/uploads/2016/01/Nike-Air-Zoom-Pegasus-31-Mens-Running-Shoe-652925_801_C_PREM.jpg",
-                "price": 1800,
+                "name": "MOCHA (HOT)",
+                "image": "http://www.hainamkochickenrice.com.my/modules/menu_gallery/assets/uploads/9f5b1-mocha(hot)-copy.jpg",
+                "price": 90,
                 "normalprice": 20000,
                 "discount": 10,
                 "discounttype": "%",
                 "currency": "THB",
                 "rate": 5,
-                "description": "The United States Open Tennis Championships is a hardcourt tennis tournament. The tournament is the modern version of one of the oldest tennis championships in the world, the U.S. National Championship, for which men's singles was first contested in 1881."
+                "description": "No sugar"
               },
             "unitprice": 1800,
             "qty": 2,

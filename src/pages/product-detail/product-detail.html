@@ -21,15 +21,11 @@
       <ion-row>
         <ion-col width-35>
           <h3 class="categories-title-pomotion">
-            <ion-icon name="ios-cash-outline"></ion-icon>
           </h3>
-        </ion-col>
+          </ion-col>
         <ion-col width-65 text-right>
-          <h3>Price {{productdetailData.unitprice | number}} ฿</h3>
-        </ion-col>
+          </ion-col>
       </ion-row>
-
-
     </ion-item>
     <ion-item class="detail-item" *ngIf="productdetailData.promotions">
       <div *ngFor="let item of productdetailData.promotions">
