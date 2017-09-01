@@ -1,3 +1,4 @@
+import { ProductDescriptionPage } from '../pages/product-description/product-description';
 import { ManuPage } from '../pages/manu/manu';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, ChangeDetectorRef } from '@angular/core';
 import { IonicApp, IonicModule } from 'ionic-angular';
@@ -92,6 +93,7 @@ import { LoginServiceProvider } from "../pages/login/login.service";
 import { RegisterPage } from "../pages/register/register";
 import { RegisterServiceProvider } from "../pages/register/register.service";
 import { ManuProvider } from '../providers/manu/manu';
+import { ProductdescriptionsProvider } from '../providers/productdescriptions/productdescriptions';
 
 
 export function createTranslateLoader(http: Http) {
@@ -133,7 +135,8 @@ export function createTranslateLoader(http: Http) {
     ListShopsComponent,
     CartListComponent,
     SearchbarComponent,
-    ManuPage
+    ManuPage,
+    ProductDescriptionPage
   ],
   imports: [
     BrowserModule,
@@ -166,7 +169,8 @@ export function createTranslateLoader(http: Http) {
     ListShopPage,
     LoginPage,
     RegisterPage,
-    ManuPage
+    ManuPage,
+    ProductDescriptionPage
 
   ],
   providers: [
@@ -201,7 +205,8 @@ export function createTranslateLoader(http: Http) {
     AuthorizeProvider,
     LoginServiceProvider,
     RegisterServiceProvider,
-    ManuProvider
+    ManuProvider,
+    ProductdescriptionsProvider
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

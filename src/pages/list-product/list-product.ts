@@ -1,3 +1,4 @@
+import { ProductDescriptionPage } from '../product-description/product-description';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ListProductModel } from '../list-product/list-product.model';
@@ -31,5 +32,9 @@ export class ListProductPage {
       }, (err) => {
         this.log.error(err);
       });
+  }
+
+  onClickproductdescriptions(){
+    this.navCtrl.push(ProductDescriptionPage);
   }
 }
