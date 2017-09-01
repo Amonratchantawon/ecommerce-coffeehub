@@ -1,0 +1,62 @@
+@mixin items-title-style($color){
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	font-size: 7vw;
+	font-weight: 700;
+	letter-spacing: 0.4px;
+	color: $color;
+    margin: px;
+}
+
+page-manu {
+    $items-grid-padding: 2px;
+    .grid-items
+    {
+        padding: 0px ($items-grid-padding/2);
+        @include flex-wrap(wrap);
+
+        .grid-item
+        {
+            padding: 0px ($items-grid-padding/2) $items-grid-padding;
+
+            .item-heading
+            {
+                padding-bottom: 42%;
+
+                .bg-overlay
+                {
+                    z-index: 1;
+                    background-color: rgba($black-c, .6);
+                }
+
+                ion-spinner {
+                    z-index: 2;
+                }
+
+                @include spinner-color($white);
+
+                .heading-row
+                {
+                    height: 100%;
+                    width: 100%;
+                    z-index: 3;
+                  position: absolute;
+                    @include align-items(center);
+
+                    .item-title
+                    {
+                        @include items-title-style($white);
+                    }
+                    .item-detail{
+                        text-align: center;
+                        font-size: 5vw;
+                        font-weight: 400;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+}

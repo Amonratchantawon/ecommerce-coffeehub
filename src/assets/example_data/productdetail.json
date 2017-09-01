@@ -1,0 +1,148 @@
+{
+    "id": "product001",
+    "name": "CAPPUCCINO",
+    "detail": "All item(s) will be shipped",
+    "unitprice": 100,
+    "image": [
+        {
+            "url": "http://baania.com/sites/default/files/property-project/365/photo/49974.jpg",
+            "id": "img001"
+        },
+        {
+            "url": "https://cdn.shopify.com/s/files/1/1563/7285/products/India-Kerala-Malabar-2_1024x1024.jpg?v=1488387383",
+            "id": "img002"
+        },
+        {
+            "url": "https://s3-media4.fl.yelpcdn.com/bphoto/aJ39zIeH2tjQKZc8Xt32xw/o.jpg",
+            "id": "img002"
+        }
+    ],
+    "review": [
+        {
+            "comment": "สินค้าคุณภาพจากต่างประเทศ",
+            "rate": 4.5
+        },
+        {
+            "comment": "ถ้าได้สินค้าแล้วจะกลับมาเพิ่มดาวให้นะ",
+            "rate": 1.5
+        }
+    ],
+    "rate": 4.5,
+    "qa": [
+        {
+            "question": "Qa question 1",
+            "answer": "Qa answer 1"
+        },
+        {
+            "question": "Qa question 2",
+            "answer": "Qa answer 2"
+        }
+    ],
+    "promotions": [
+        {
+            "name": "โปรโมชั่นวันวาเลนไทน์",
+            "desc": "โปรโมชั่นวันวาเลนไทน์ ซื้อ 1 แถม 10",
+            "code": "promotion 1"
+        }
+    ],
+    "favorite": [
+        {
+            "customerid": "xxx",
+            "favdate": "2017-08-05T14:05:59"
+        }
+    ],
+    "historyLog": [],
+    "stock": {
+        "stockvalue": [
+            {
+                "in": 10,
+                "out": 10
+            }
+        ],
+        "sumin": 10,
+        "sumout": 10,
+        "amount": 10
+    },
+    "qty": 40,
+    "issize": true,
+    "size": {
+        "detail": "https://scontent-sea1-1.cdninstagram.com/t51.2885-15/s480x480/e35/13636041_639744079526778_1585487380_n.jpg?ig_cache_key=MTI5NDE4MDYzNTI4Nzk4NDAwNQ%3D%3D.2",
+        "sizedetail": [
+            {
+                "name": "S",
+                "qty": 10
+            },
+            {
+                "name": "M",
+                "qty": 10
+            },
+            {
+                "name": "L",
+                "qty": 10
+            },
+            {
+                "name": "XL",
+                "qty": 10
+            }
+        ]
+    },
+    "category": [
+        {
+            "name": "แฟชั่น",
+            "desc": "category description",
+            "subcategory": [
+                {
+                    "name": "กางเกง",
+                    "desc": "subcategory description"
+                }
+            ]
+        }
+    ],
+    "payment": [
+        {
+            "payment": "เก็บเงินปลายทางทั่วประเทศ"
+        }
+    ],
+    "shipping": [
+        {
+            "shipping": "ส่งแบบธรรมดา: ฟรี"
+        }
+    ],
+    "shop": {
+        "shop": "CoffeeHub Thailand ",
+        "rate": 4
+    },
+    "relationProducts": [
+        {
+            "name": "Coffee",
+            "image": "https://www.kissatea.com/wp-content/uploads/2017/05/Kissa_Drinks20175336-1000x1100.jpg",
+            "unitprice": 100
+        },
+        {
+            "name": "Coffee",
+            "image": "https://s3-media2.fl.yelpcdn.com/bphoto/toTnh6conv5GTRU4khBoPg/348s.jpg",
+            "unitprice": 100
+        },
+        {
+            "name": "Coffee",
+            "image": "https://fastjapan.com/cht/wp-content/uploads/2017/04/817942eaff999-eb85-459b-86aa-ab6d3e9161ed_l-1000x1000.jpg",
+            "unitprice": 100
+        },
+        {
+            "name": "Coffee",
+            "image": "http://baania.com/sites/default/files/property-project/365/photo/49974.jpg",
+            "unitprice": 100
+        },
+        {
+            "name": "Coffee",
+            "image": "http://baania.com/sites/default/files/property-project/365/photo/49974.jpg",
+            "unitprice": 100
+        },
+        {
+            "name": "Coffee",
+            "image": "http://baania.com/sites/default/files/property-project/365/photo/49974.jpg",
+            "unitprice": 100
+        }
+    ],
+    "title": "Product Detail"
+}
