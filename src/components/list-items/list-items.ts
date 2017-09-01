@@ -41,5 +41,8 @@ export class ListItemsComponent {
       })
     }
   }
+  clickTocart(){
+    alert("add to cart success");
+  }
 
 }
