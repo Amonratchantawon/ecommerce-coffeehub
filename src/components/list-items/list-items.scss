@@ -1,4 +1,5 @@
 list-items {
+    
     ul {
         padding: 0px;
         margin-top:0px;
@@ -37,3 +38,13 @@ list-items {
 .magin-right-10-custom {
     margin-right: 10px;
 }
+
+.peel{
+    width: 5px;
+    height: 25px;
+    padding-top: 50%;
+}
+button.item-ios:not([detail-none]) .item-inner{
+    padding-right: 0px !important;
+}
+
