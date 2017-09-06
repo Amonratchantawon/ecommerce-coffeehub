@@ -1,3 +1,4 @@
+import { ProductDescriptionPage } from '../product-description/product-description';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 import { FavoriteModel } from '../favorite/favorite.model';
@@ -23,7 +24,7 @@ export class FavoritePage {
 
   ionViewDidLoad() {
     this.log.info('ionViewDidLoad FavoritePage');
-    this.getSearchData();
+    this.getFavoriteData();
   }
   // selectTab(index) {
   //   this.pageSlider.slideTo(index);
@@ -32,7 +33,7 @@ export class FavoritePage {
   // changeWillSlide($event) {
   //   this.tabs = $event._snapIndex.toString();
   // }
-  getSearchData() {
+  getFavoriteData() {
     this.favoriteService
       .getFavorite()
       .then((data) => {
@@ -40,6 +41,10 @@ export class FavoritePage {
       }, (err) => {
        this.log.error(err);
       });
+  }
+
+  getToProductDescriptionPage(){
+    this.navCtrl.push(ProductDescriptionPage);
   }
 
 }

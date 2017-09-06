@@ -27,9 +27,11 @@ export class ManuPage {
  
   getdataManu(){
     this.manuProvider.getData().then(res=>{
-      this.menuData = res
-      console.log("ManuPage..........."+JSON.stringify(this.menuData));
-    })
+      this.menuData = res;
+      // alert(JSON.stringify(res));
+    }).catch(err =>{
+      // alert(JSON.stringify(err));
+    });
   }
 
   onClicktomenu(){

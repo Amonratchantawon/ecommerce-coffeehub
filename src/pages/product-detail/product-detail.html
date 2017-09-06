@@ -50,20 +50,20 @@
       </div>
     </ion-item>
 
-    <!-- <ion-item class="detail-item" *ngIf="productdetailData.issize">
+    <ion-item class="detail-item" *ngIf="productdetailData.issize">
       <h3 class="categories-title-pomotion">
         <ion-icon name="ios-resize-outline"></ion-icon> 
         {{'Select Size' | translate}}</h3>
        <span class="detail-text">{{productdetailData.size.detail}}</span> 
       <preload-image [ratio]="{w:1, h:1}" [src]="productdetailData.size.detail"></preload-image>
-    </ion-item> -->
+    </ion-item>
 
-    <!-- <ion-list class="radio-tags" radio-group *ngIf="productdetailData.size">
+    <ion-list class="radio-tags" radio-group *ngIf="productdetailData.size">
       <ion-item *ngFor="let data of productdetailData.size.sizedetail" (tap)="selectSize(data.name)" class="radio-tag">
         <ion-label>{{data.name}}</ion-label>
         <ion-radio value="{{data.name}}"></ion-radio>
       </ion-item>
-    </ion-list> -->
+    </ion-list>
 
     <ion-item class="detail-item" *ngIf="productdetailData.shop">
       <h3 class="categories-title-pomotion">

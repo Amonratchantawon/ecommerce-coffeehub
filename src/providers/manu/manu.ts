@@ -17,7 +17,7 @@ export class ManuProvider {
     console.log('Hello ManuProvider Provider');
   }
   getData(): Promise<MenuModel> {
-    return this.http.get('../../assets/example_data/menu.json')
+    return this.http.get('./assets/example_data/menu.json')
       .toPromise()
       .then(response => response.json() as MenuModel)
       .catch(this.handleError);

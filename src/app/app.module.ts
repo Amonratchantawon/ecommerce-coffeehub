@@ -46,6 +46,7 @@ import { AppRate } from '@ionic-native/app-rate';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { Crop } from '@ionic-native/crop';
 import { EmailComposer } from '@ionic-native/email-composer';
+import { Camera } from '@ionic-native/camera';
 
 // Functionalities
 // import { FunctionalitiesPage } from '../pages/functionalities/functionalities';
@@ -94,6 +95,10 @@ import { RegisterPage } from "../pages/register/register";
 import { RegisterServiceProvider } from "../pages/register/register.service";
 import { ManuProvider } from '../providers/manu/manu';
 import { ProductdescriptionsProvider } from '../providers/productdescriptions/productdescriptions';
+import { CameraProvider } from '../providers/camera/camera';
+import { UndefinedProvider } from '../providers/undefined/undefined';
+import { AlertProvider } from '../providers/alert/alert';
+import { ToastProvider } from '../providers/toast/toast';
 
 
 export function createTranslateLoader(http: Http) {
@@ -194,6 +199,7 @@ export function createTranslateLoader(http: Http) {
     ImagePicker,
     Crop,
     EmailComposer,
+    Camera,
     SearchServiceProvider,
     FavoriteServiceProvider,
     ProfileServiceProvider,
@@ -206,7 +212,11 @@ export function createTranslateLoader(http: Http) {
     LoginServiceProvider,
     RegisterServiceProvider,
     ManuProvider,
-    ProductdescriptionsProvider
+    ProductdescriptionsProvider,
+    CameraProvider,
+    UndefinedProvider,
+    AlertProvider,
+    ToastProvider
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

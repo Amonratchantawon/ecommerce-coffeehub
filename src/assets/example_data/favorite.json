@@ -1,60 +1,68 @@
 {
-    "title": "Favorite List",
-    "items": [
-        {
-            "name": "Crossfit WorldWide Event",
-            "image": "https://images-eu.ssl-images-amazon.com/images/G/02/AMAZON-FASHION/2016/SHOES/SPORT/MISC/Nikemobilefootball",
-            "price": 1800,
-            "normalprice": 20000,
-            "discount" : 10,
-            "discounttype" : "%",
-            "currency": "THB",
-            "rate":5,
-            "description": "At the Crossfit WorldWide Event athletes at compete in workouts that they learn about hours or days beforehand, consisting mostly of an assortment of standard aerobic, weightlifting, and gymnastics movement."
-          },
-          {
-            "name": "US Open",
-            "image": "http://www.9digits.com/wp-content/uploads/2016/01/Nike-Air-Zoom-Pegasus-31-Mens-Running-Shoe-652925_801_C_PREM.jpg",
-            "price": 1800,
-            "normalprice": 20000,
-            "discount" : 10,
-            "discounttype" : "%",
-            "currency": "THB",
-            "rate":5,
-            "description": "The United States Open Tennis Championships is a hardcourt tennis tournament. The tournament is the modern version of one of the oldest tennis championships in the world, the U.S. National Championship, for which men's singles was first contested in 1881."
-          },
-          {
-            "name": "The Basketball Tournament",
-            "image": "https://images.footlocker.com/pi/34835006/zoom/nike-air-huarache-womens",
-            "price": 1800,
-            "normalprice": 20000,
-            "discount" : 10,
-            "discounttype" : "%",
-            "currency": "THB",
-            "rate":5,
-            "description": "The Basketball Tournament (TBT) is an open-application, single-elimination tournament played each summer in the United States, currently featuring 64 teams. It was founded in 2014 by Jonathan Mugar."
-          },
-          {
-            "name": "British Open",
-            "image": "http://lovesneaker.com/12228-thickbox_default/-nike-flyknit-racer-nike-10-0027.jpg",
-            "price": 1800,
-            "normalprice": 20000,
-            "discount" : 10,
-            "discounttype" : "%",
-            "currency": "THB",
-            "rate": 4.5,
-            "description": "The Open Championship, often referred to as The Open or the British Open, is the oldest of the four major championships in professional golf. Held in the United Kingdom, it is administered by The R&A and is the only major outside the United States."
-          },
-          {
-            "name": "FIFA World Cup",
-            "price": 1800,
-            "normalprice": 20000,
-            "discount" : 10,
-            "discounttype" : "%",
-            "currency": "THB",
-            "rate":5,
-            "image": "https://thesolesupplier.co.uk/wp-content/uploads/2017/05/Nike-Flyknit-Racer-Be-True.png",
-            "description": "The FIFA World Cup, often simply called the World Cup, is an international association football competition contested by the senior men's national teams of the members of Fédération Internationale de Football Association (FIFA), the sport's global governing body."
-          }
-    ]
+  "title":"To Day",
+  "productfavorite": [
+    {
+      "name": "Expresso",
+      "image": "http://gabrielserafini.com/wp-content/uploads/IMG_3139-1000x1000.jpg",
+      "descriptons": "Coffee grown worldwide can trace its heritage back centuries to the ancient coffee forests on the Ethiopian plateau.",
+      "price" : 75,
+      "normalprice": 100,
+      "discount": 10,
+      "discounttype": "%"
+    },
+    {
+      "name": "Frappuccino",
+      "image": "http://www.felipejimenez.com/wp-content/uploads/2016/10/coffee-1000x1000.jpg",
+      "descriptons": "Coffee grown worldwide can trace its heritage back centuries to the ancient coffee forests on the Ethiopian plateau.",
+      "price" : 45,
+      "normalprice": 69,
+      "discount": 10,
+      "discounttype": "%"
+    },
+    {
+      "name": "Caramel Cake",
+      "image": "https://belindajeffery.com.au/wp-content/uploads/2017/02/apple-date-and-caramel-cake-1000x1000-c-center.jpg",
+      "descriptons": "Coffee grown worldwide can trace its heritage back centuries to the ancient coffee forests on the Ethiopian plateau.",
+      "price" : 50,
+      "normalprice": 75,
+      "discount": 10,
+      "discounttype": "%"
+    },
+    {
+      "name": "Macaron",
+      "image": "http://blog.wilton.com/wp-content/uploads/2016/07/FrMaHa30845-1.jpg",
+      "descriptons": "Coffee grown worldwide can trace its heritage back centuries to the ancient coffee forests on the Ethiopian plateau.",
+      "price" : 40,
+      "normalprice": 55,
+      "discount": 10,
+      "discounttype": "%"
+    },
+    {
+      "name": "Cappuccino",
+      "image": "https://static1.squarespace.com/static/529f570de4b0f341dc296edf/54c7b3b8e4b02140e9844153/54c7b3cfe4b00cfd22a57f25/1422373842343/photo%2816%29.JPG",
+      "descriptons": "Coffee grown worldwide can trace its heritage back centuries to the ancient coffee forests on the Ethiopian plateau.",
+      "price" : 70,
+      "normalprice": 90,
+      "discount": 10,
+      "discounttype": "%"
+    },
+    {
+      "name": "Macchiato",
+      "image": "http://3.bp.blogspot.com/-jY78Y6SzO9s/VUajNp8ICaI/AAAAAAABi5Y/3qhYVhxD0d0/s1600/streamer03.JPG",
+      "descriptons": "Coffee grown worldwide can trace its heritage back centuries to the ancient coffee forests on the Ethiopian plateau.",
+      "price" : 35,
+      "normalprice": 75,
+      "discount": 10,
+      "discounttype": "%"
+    },
+    {
+      "name": "Latte",
+      "image": "http://www.discoverhongkong.com/au/promotions/experience-hongkong/wp-content/uploads/2016/10/Elephant-Grounds-Signature-Blend-1000x1000.jpg",
+      "descriptons": "Coffee grown worldwide can trace its heritage back centuries to the ancient coffee forests on the Ethiopian plateau.",
+      "price" : 55,
+      "normalprice": 79,
+      "discount": 10,
+      "discounttype": "%"
+    }
+  ]
 }

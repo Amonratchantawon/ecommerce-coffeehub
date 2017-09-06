@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>productDescription</ion-title>
+    <ion-title>Description</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -19,10 +19,53 @@
     <ion-card-header>
       <h2 class="title">{{productdata.productdescriptions.name}}</h2>
     </ion-card-header>
-    <img [src]="productdata.productdescriptions.image">
+    <ion-card-content class="image">
+      <!-- <img [src]="productdata.productdescriptions.image"> -->
+
+      <ion-slides pager="true">
+        <ion-slide *ngFor=" let g of  productdata.productdescriptions.image">
+          <img [src]="g">
+        </ion-slide>
+      </ion-slides>
+
+    </ion-card-content>
+
 
     <ion-card-content>
-      <p class="color-orenge-custom">{{productdata.productdescriptions.detail}}</p>
+      <p class="color-orenge-custom" text-justify>{{productdata.productdescriptions.detail}}</p>
+    </ion-card-content>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Sugar</ion-label>
+          <ion-select [(ngModel)]="sugar">
+            <ion-option value="hight">hight</ion-option>
+            <ion-option value="medium">medium</ion-option>
+            <ion-option value="low">low</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-item>
+          <ion-label>Degee</ion-label>
+          <ion-select [(ngModel)]="degee">
+            <ion-option value="reguler">reguler</ion-option>
+            <ion-option value="half">half-caf</ion-option>
+            <ion-option value="de">de-caf</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-item>
+          <ion-label>Size</ion-label>
+          <ion-select [(ngModel)]="size">
+            <ion-option value="X">X</ion-option>
+            <ion-option value="M">M</ion-option>
+            <ion-option value="L">L</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
     </ion-card-content>
 
     <ion-card-content>
@@ -35,21 +78,61 @@
           </ion-col>
           <ion-col col-6>
             <p class="price-pomotions">฿ {{productdata.productdescriptions.price}}
-              <span class="text-decoration">฿ {{productdata.productdescriptions.normalprice}} </span>
+              <!-- <span class="text-decoration">฿ {{productdata.productdescriptions.normalprice}} </span>
               <span> -{{productdata.productdescriptions.discount}} </span>
-              <span> {{productdata.productdescriptions.discounttype}} </span>
+              <span> {{productdata.productdescriptions.discounttype}} </span> -->
             </p>
           </ion-col>
         </ion-row>
       </ion-grid>
     </ion-card-content>
   </ion-card>
-</ion-content>
 
+  <ion-card>
+    <ion-card-content (click)="onclickToShop()">
+
+      <ion-grid class="grid-font">
+        <ion-row>
+          <ion-col col-3 align-self-center>
+            <img  class="image-logo" [src]="productdata.logo">
+          </ion-col>
+          <ion-col col-9>
+            <ion-row>
+              <ion-col col-12>
+                <h2>จักทำโดยละมุนภัณฑ์ </h2>
+                <p>ร้านกาแฟละมุนภัณฑ์ คัดสรรญวัตถุดิบจากธรรมชาติ ใส่ใจลูกค้าทุกราลละเอียด</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col col-12 class="icon-star">
+                  <ion-icon ios="ios-star" md="md-star"></ion-icon>
+                  <ion-icon ios="ios-star" md="md-star"></ion-icon>
+                  <ion-icon ios="ios-star" md="md-star"></ion-icon>
+                  <ion-icon ios="ios-star" md="md-star"></ion-icon>
+                  <ion-icon ios="ios-star-half" md="md-star-half"></ion-icon>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <list-scoll-x [populars]="homedata.popularproducts"></list-scoll-x>
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>
 <ion-footer>
   <ion-row>
     <ion-col>
     </ion-col>
   </ion-row>
-  <button ion-button block color="danger">Add to cart</button>
+  <button ion-button block color="danger" (click)="orderProduct()">Add to cart</button>
 </ion-footer>

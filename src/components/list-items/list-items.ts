@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { LogServiceProvider } from '../../providers/log-service/log-service';
+
 /**
  * Generated class for the ListItemsComponent component.
  *
@@ -41,8 +42,5 @@ export class ListItemsComponent {
       })
     }
   }
-  clickTocart(){
-    alert("add to cart success");
-  }
-
+  
 }

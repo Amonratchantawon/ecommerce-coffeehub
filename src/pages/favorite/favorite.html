@@ -50,5 +50,54 @@
       <h1>ContentTab 5</h1>
     </ion-slide>
   </ion-slides>-->
-  <list-items [items]="favoriteData.items"></list-items>
+  <!-- <list-items [items]="favoriteData.items"></list-items> -->
+  <!-- {{ favoriteData.title }}
+
+  <ion-list >
+    <ion-item>
+      {{ d.name }}
+      <img [src]="d.image"> 
+       {{ d.descriptons }}
+    </ion-item>
+  </ion-list> -->
+
+  <ion-list *ngFor="let d of favoriteData.productfavorite">
+    <ion-item-sliding>
+      <ion-item class="carde-d">
+        <ion-avatar item-start>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-3 align-self-center class="image">
+                <img [src]="d.image" class="product-image">
+              </ion-col>
+              <ion-col col-9>
+                <h2>{{d.name}}</h2>
+                <p> {{ d.descriptons }} </p>
+                <p class="price-rigth">
+                  <span class="text-decoration">฿ {{d.normalprice}} </span>
+                  <!-- <span> -{{d.discount}} </span> -->
+                  <!-- <span> {{d.discounttype}} </span> -->
+                  ฿ {{ d.price}}
+
+                </p>
+
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-avatar>
+      </ion-item>
+      <ion-item-options side="right" class="btn-b">
+        <button ion-button color="hecondary" (click)="getToProductDescriptionPage()">
+          <ion-icon name="delete"></ion-icon>
+          <ion-icon ios="logo-usd" md="logo-usd"></ion-icon>
+          Buy
+        </button>
+        <button ion-button color="danger">
+            <ion-icon name="delete"></ion-icon>
+            <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+            Delete
+          </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>

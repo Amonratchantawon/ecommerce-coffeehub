@@ -1,3 +1,5 @@
+import { ProductDescriptionPage } from '../product-description/product-description';
+// import { ProductDescriptionModel } from '../product-description/productDescriptions.model';
 import { ManuPage } from '../manu/manu';
 import { Component } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
@@ -23,11 +25,13 @@ import { LogServiceProvider } from '../../providers/log-service/log-service';
 export class HomePage {
   //images: Array<string> = [];
   home: HomeModel = new HomeModel();
+  // dataDescriptions :ProductDescriptionModel = new ProductDescriptionModel();
   loading: any;
   constructor(public navCtrl: NavController, 
     public homeService: HomeService,
     public loadingCtrl: LoadingController,
     public log: LogServiceProvider
+
   ) {
     
     this.loading = this.loadingCtrl.create();
@@ -45,8 +49,15 @@ export class HomePage {
       });
   }
 
+  // getdataDescriptions(){
+  //   this.homeService.getDataDescription().then( res =>{
+  //     this.dataDescriptions = res;
+  //     console.log("getdataDescriptions...."+JSON.stringify(this.dataDescriptions));
+  //   })
+  // }
+
   selectedItem(e){
-    this.navCtrl.push(ProductDetailPage, e);
+    this.navCtrl.push(ProductDescriptionPage, e);
   }
 
   selectedShop(e){

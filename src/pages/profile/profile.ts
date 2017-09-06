@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, ActionSheetController, Platform, LoadingController, NavParams } from 'ionic-angular';
 import { ProfileModel } from '../profile/profile.model';
 import { ProfileServiceProvider } from '../profile/profile.service';
 import { LogServiceProvider } from '../../providers/log-service/log-service';
 import { AuthorizeProvider } from "../../providers/authorize/authorize";
+import { CameraProvider } from "../../providers/camera/camera";
+import { AlertProvider } from "../../providers/alert/alert";
+import { ToastProvider } from "../../providers/toast/toast";
 
 /**
  * Generated class for the ProfilePage page.
@@ -18,7 +21,24 @@ import { AuthorizeProvider } from "../../providers/authorize/authorize";
 })
 export class ProfilePage {
   profileData: ProfileModel = new ProfileModel();
-  constructor(public navCtrl: NavController, public navParams: NavParams, public profileService: ProfileServiceProvider, public log: LogServiceProvider, public authorizeProvider: AuthorizeProvider) {
+  chosenPicture = "https://scontent.fbkk5-8.fna.fbcdn.net/v/t1.0-9/21314397_1410273562383607_9014405429036635307_n.jpg?oh=00bac870110c20fe9fa3af26eb47fb63&oe=5A22E023";
+  enableNotifications: any;
+  languages = ['English', 'Portuguese', 'French'];
+  isenabled: boolean = true;
+  Edit ="create";
+
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    public profileService: ProfileServiceProvider,
+    public log: LogServiceProvider,
+    public authorizeProvider: AuthorizeProvider,
+    public actionsheetCtrl: ActionSheetController,
+    public platform: Platform,
+    public loadingCtrl: LoadingController,
+    public cameraProvider: CameraProvider,
+    public alertService: AlertProvider,
+    public toastProvider: ToastProvider
+  ) {
   }
 
   ionViewDidLoad() {
@@ -26,18 +46,18 @@ export class ProfilePage {
     // this.getProfileData();
   }
 
-  ionViewWillEnter() {
-    this.checkUser();
-  }
+  // ionViewWillEnter() {
+  //   this.checkUser();
+  // }
 
-  checkUser() {
-    this.profileData = this.authorizeProvider.isAuthorization();
-  }
+  // checkUser() {
+  //   this.profileData = this.authorizeProvider.isAuthorization();
+  // }
 
-  logout() {
-    this.authorizeProvider.unAuthorization();
-    this.checkUser();
-  }
+  // logout() {
+  //   this.authorizeProvider.unAuthorization();
+  //   this.checkUser();
+  // }
   // getProfileData() {
   //   this.profileService
   //     .getProfile()
@@ -47,4 +67,96 @@ export class ProfilePage {
   //       this.log.error(err);
   //     });
   // }
+
+  clicktogglr(){
+    if (this.Edit == "create") {
+      this.Edit = "checkbox-outline"
+      if (this.isenabled == true) {
+        this.isenabled=false;
+      }
+    } else if (this.Edit == "checkbox-outline") {
+      this.Edit = "create"
+      if (this.isenabled == false) {
+        this.isenabled=true;
+      }
+    }
+    
+  }
+
+
+  logout() {
+    this.alertService.presentAlertWithCallback('Are you sure?',
+      'This will log you out of this application.').then((yes) => {
+        if (yes) {
+          this.toastProvider.create('Logged out of the application');
+        }
+      });
+  }
+
+  toggleNotifications() {
+    if (this.enableNotifications) {
+      this.toastProvider.create('Notifications enabled.');
+    } else {
+      this.toastProvider.create('Notifications disabled.');
+    }
+  }
+
+  changePicture() {
+    const actionsheet = this.actionsheetCtrl.create({
+      title: 'upload picture',
+      buttons: [
+        {
+          text: 'camera',
+          icon: !this.platform.is('ios') ? 'camera' : null,
+          handler: () => {
+            this.takePicture();
+          }
+        },
+        {
+          text: !this.platform.is('ios') ? 'gallery' : 'camera roll',
+          icon: !this.platform.is('ios') ? 'image' : null,
+          handler: () => {
+            this.getPicture();
+          }
+        },
+        {
+          text: 'cancel',
+          icon: !this.platform.is('ios') ? 'close' : null,
+          role: 'destructive',
+          handler: () => {
+            console.log('the user has cancelled the interaction.');
+          }
+        }
+      ]
+    });
+    return actionsheet.present();
+  }
+
+  takePicture() {
+    const loading = this.loadingCtrl.create();
+
+    loading.present();
+    return this.cameraProvider.getPictureFromCamera().then(picture => {
+      if (picture) {
+        this.chosenPicture = picture;
+      }
+      loading.dismiss();
+    }, error => {
+      alert(error);
+    });
+  }
+
+  getPicture() {
+    const loading = this.loadingCtrl.create();
+
+    loading.present();
+    return this.cameraProvider.getPictureFromPhotoLibrary().then(picture => {
+      if (picture) {
+        this.chosenPicture = picture;
+      }
+      loading.dismiss();
+    }, error => {
+      alert(error);
+    });
+  }
 }
