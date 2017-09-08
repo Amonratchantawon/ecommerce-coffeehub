@@ -16,7 +16,7 @@
 <ion-content class="contact-card-content">
   <topbar [dataTopBar]="shopDetailData.shop"></topbar>
   <div class="button-bar">
-    <button ion-button primary>
+    <button ion-button primary (click)="clickToCallShop()">
     <ion-icon name="call"></ion-icon>
   </button>
     <button ion-button primary (click)="sendMail()">

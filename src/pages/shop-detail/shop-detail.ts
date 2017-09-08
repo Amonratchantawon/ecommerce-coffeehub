@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { ShopModel } from '../shop-detail/shop-detail.model';
 import { ShopDetailServiceProvider } from '../shop-detail/shop-detail.service';
 import { LogServiceProvider } from '../../providers/log-service/log-service';
+import { CallNumber } from "@ionic-native/call-number";
 
 /**
  * Generated class for the ShopDetailPage page.
@@ -16,7 +17,12 @@ import { LogServiceProvider } from '../../providers/log-service/log-service';
 })
 export class ShopDetailPage {
   shopDetailData: ShopModel = new ShopModel();
-  constructor(public navCtrl: NavController, public navParams: NavParams, public shopDetailService: ShopDetailServiceProvider, public log: LogServiceProvider) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public shopDetailService: ShopDetailServiceProvider, 
+    public log: LogServiceProvider,
+    private callNumber:CallNumber
+  ) {
 
   }
 
@@ -33,5 +39,12 @@ export class ShopDetailPage {
       }, (err) => {
         this.log.error(err);
       });
+  }
+
+  clickToCallShop(){
+    alert("calling......");
+    this.callNumber.callNumber("0930241530",true)
+    .then(() => console.log('Launched dialer!'))
+    .catch(() => console.log('Error launching dialer'));
   }
 }

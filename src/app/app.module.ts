@@ -47,6 +47,7 @@ import { ImagePicker } from '@ionic-native/image-picker';
 import { Crop } from '@ionic-native/crop';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { Camera } from '@ionic-native/camera';
+import { CallNumber } from "@ionic-native/call-number";
 
 // Functionalities
 // import { FunctionalitiesPage } from '../pages/functionalities/functionalities';
@@ -200,6 +201,7 @@ export function createTranslateLoader(http: Http) {
     Crop,
     EmailComposer,
     Camera,
+    CallNumber,
     SearchServiceProvider,
     FavoriteServiceProvider,
     ProfileServiceProvider,
