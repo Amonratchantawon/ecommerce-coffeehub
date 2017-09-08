@@ -30,6 +30,8 @@
     <h2 class="item-title">{{data.product.name}}</h2>
     <p *ngIf="data.product.issize"><b> Size : {{data.product.size.detail}} - {{data.selectedsize}}</b></p>
     <p><b>{{data.product.price}} Baht</b></p>
+    <!-- <p><b>{{data.amount}} Baht</b></p> -->
+    
     <p> {{data.product.description}} </p>
     <!-- <button ion-button icon-only clear color="danger" class="circle-btn"> 
           <ion-icon name="md-heart-outline"></ion-icon>
@@ -39,7 +41,7 @@
         </button> -->
     <div class="counter-list">
       <ion-item no-lines class="counter-item">
-        <counter-input [counterValue]="data.qty"></counter-input>
+        <counter-input [counterValue]="data.qty" (output)="onClickQty($event,data)"></counter-input>
       </ion-item>
     </div>
   </ion-col>

@@ -2,20 +2,20 @@
     "title": "Shop List",
     "items": [
         {
-            "name": "Shop 1",
-            "image": "https://www.onsite.org/assets/images/teaser/online-e-shop.jpg"
+            "name": "Coffee Hub",
+            "image": "http://3.bp.blogspot.com/-jY78Y6SzO9s/VUajNp8ICaI/AAAAAAABi5Y/3qhYVhxD0d0/s1600/streamer03.JPG"
         },
         {
-            "name": "Shop 2",
-            "image": "https://www.onsite.org/assets/images/teaser/online-e-shop.jpg"
+            "name": "Coffee House",
+            "image": "https://www.kissatea.com/wp-content/uploads/2017/05/Kissa_Drinks20175336-1000x1100.jpg"
         },
         {
-            "name": "Shop 3",
-            "image": "https://www.onsite.org/assets/images/teaser/online-e-shop.jpg"
+            "name": "Club Coffee",
+            "image": "http://www.felipejimenez.com/wp-content/uploads/2016/10/coffee-1000x1000.jpg"
         },
         {
-            "name": "Shop 4",
-            "image": "https://www.onsite.org/assets/images/teaser/online-e-shop.jpg"
+            "name": "The Grind",
+            "image": "http://www.discoverhongkong.com/au/promotions/experience-hongkong/wp-content/uploads/2016/10/Elephant-Grounds-Signature-Blend-1000x1000.jpg"
         }
     ]
 }

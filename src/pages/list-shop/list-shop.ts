@@ -1,3 +1,5 @@
+import { ShopDetailPage } from '../shop-detail/shop-detail';
+import { ProductDetailPage } from '../product-detail/product-detail';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ListShopModel } from '../list-shop/list-shop.model';
@@ -33,6 +35,10 @@ export class ListShopPage {
       }, (err) => {
         this.log.error(err);
       });
+  }
+
+  clickTopage(){
+    this.navCtrl.push(ShopDetailPage);
   }
 
 }

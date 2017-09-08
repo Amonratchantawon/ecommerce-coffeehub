@@ -50,4 +50,8 @@ export class CartPage {
   gotoProductDetail(item){
     this.navCtrl.push(ProductDetailPage,item)
   }
+
+  onPayment(cart){
+    console.log(cart);
+  }
 }

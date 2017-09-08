@@ -12,9 +12,8 @@
                 "rate": 5,
                 "description": "Low sugar"
               },
-            "unitprice": 1800,
             "qty": 2,
-            "amount": 3600
+            "amount": 200
         },
         {
             "product": {
@@ -28,10 +27,9 @@
                 "rate": 5,
                 "description": "No sugar"
               },
-            "unitprice": 1800,
             "qty": 2,
-            "amount": 3600
+            "amount": 180
         }
     ],
-    "totalamount": 800.00
+    "totalamount": 380
 }

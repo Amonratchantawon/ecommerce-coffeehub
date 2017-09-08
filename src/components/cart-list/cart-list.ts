@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { LogServiceProvider } from '../../providers/log-service/log-service';
 /**
  * Generated class for the CartListComponent component.
@@ -17,6 +17,23 @@ export class CartListComponent {
   constructor(public log: LogServiceProvider) {
     this.log.info('Hello CartListComponent Component');
     this.text = 'Hello World';
+  }
+
+  onClickQty(event, data) {
+    data.qty = event;
+    console.log("QTY :" + data.qty);
+    this.calculete();
+    // this.totalQty.emit(data.qty);
+  }
+
+  calculete() {
+    
+    this.carts.totalamount = 0;
+    for (var i = 0; i < this.carts.items.length; i++) {
+      this.carts.items[i].amount = 0;
+      this.carts.items[i].amount = this.carts.items[i].qty * this.carts.items[i].product.price;
+      this.carts.totalamount += this.carts.items[i].amount;
+    }
   }
 
 }

@@ -3,7 +3,7 @@ import { ShopDetailPage } from '../shop-detail/shop-detail';
 import { HomeModel } from '../home/home.model';
 import { HomeService } from '../home/home.service';
 import { Jsonp } from '@angular/http';
-import { ProductDescriptionModel } from './productDescriptions.model';
+import { Price, ProductDescriptionModel } from './productDescriptions.model';
 import { ProductdescriptionsProvider } from '../../providers/productdescriptions/productdescriptions';
 
 import { Component } from '@angular/core';
@@ -27,9 +27,7 @@ export class ProductDescriptionPage {
 
   @ViewChild(Slides) slides: Slides;
 
-  size :any;
-  degee:any;
-  sugar:any;
+  selectSize :Price = new Price();
 
   homedata: HomeModel = new HomeModel();
   productdata: ProductDescriptionModel = new ProductDescriptionModel();
@@ -48,8 +46,11 @@ export class ProductDescriptionPage {
   }
 
   getdataProductDescriptions(){
+    
     this.productdescriptionsProvider.getData().then(res =>{
       this.productdata = res;
+      
+    this.selectSize =  this.productdata.productdescriptions.price[0];
       console.log("productDescription........"+JSON.stringify(this.productdata));
     })
   }
@@ -60,10 +61,6 @@ export class ProductDescriptionPage {
       this.homedata = data;
       console.log("homedata"+this.homedata);
     });
-  }
-
-  orderProduct(){
-    console.log("Size : "+this.size+"\nsuger : "+this.sugar+"\ndegee : "+this.degee);
   }
 
   onclickToShop(){

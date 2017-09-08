@@ -1,3 +1,4 @@
+import { ProductDescriptionPage } from '../product-description/product-description';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SearchModel } from './search.model';
@@ -42,6 +43,10 @@ export class SearchPage {
     } else {
       this.searchData.items = e;
     }
+  }
+
+  clickToproductdes(event){
+    this.navCtrl.push(ProductDescriptionPage, event)
   }
 
 }
