@@ -1,7 +1,8 @@
+import { ProductSearchModel } from './search.model';
 import { ProductDescriptionPage } from '../product-description/product-description';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { SearchModel } from './search.model';
+
 import { SearchServiceProvider } from './search.service';
 import { LogServiceProvider } from '../../providers/log-service/log-service';
 
@@ -17,7 +18,7 @@ import { LogServiceProvider } from '../../providers/log-service/log-service';
   templateUrl: 'search.html',
 })
 export class SearchPage {
-  searchData: SearchModel = new SearchModel();
+  searchData: ProductSearchModel = new ProductSearchModel();
   constructor(public navCtrl: NavController, public navParams: NavParams, public searchServiceProvider: SearchServiceProvider, public log: LogServiceProvider) {
   }
 
@@ -37,13 +38,13 @@ export class SearchPage {
     });
   }
 
-  searchInput(e) {
-    if (e && e == 'reload') {
-      this.getSearchData();
-    } else {
-      this.searchData.items = e;
-    }
-  }
+  // searchInput(e) {
+  //   if (e && e == 'reload') {
+  //     this.getSearchData();
+  //   } else {
+  //     this.searchData.items = e;
+  //   }
+  // }
 
   clickToproductdes(event){
     this.navCtrl.push(ProductDescriptionPage, event)

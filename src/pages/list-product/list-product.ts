@@ -1,3 +1,4 @@
+import { CategoryModel } from '../category/category.model';
 import { ProductDescriptionPage } from '../product-description/product-description';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -16,25 +17,54 @@ import { LogServiceProvider } from '../../providers/log-service/log-service';
   templateUrl: 'list-product.html',
 })
 export class ListProductPage {
-  listProductData: ListProductModel = new ListProductModel();
-  constructor(public navCtrl: NavController, public navParams: NavParams, public listProductService: ListProductServiceProvider, public log: LogServiceProvider) {
+  listProductData: Array<ListProductModel> = new Array<ListProductModel>();
+  cateData: CategoryModel = new CategoryModel();
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public listProductService: ListProductServiceProvider, 
+    public log: LogServiceProvider) {
+      this.cateData = this.navParams.data.itemdata;
+      console.log("DTA : " + JSON.stringify(this.cateData._id));
+      
   }
 
   ionViewDidLoad() {
     this.log.info('ionViewDidLoad ListProductPage');
-    this.getListProductData();
+    this.getdatatest();
+    // this.getListProductData();
+
+    // this.getCate();
+
   }
-  getListProductData() {
-    this.listProductService
-      .getListProfile()
-      .then((data) => {
-        this.listProductData = data;
-      }, (err) => {
-        this.log.error(err);
-      });
+  // getCate(){
+  //   this.cateData = this.navParams.data;
+  //   console.log("this.navParams.get('itemdata');>>>>>>>>>>>>>>"+JSON.stringify(this.cateData));
+  //   console.log("Cate ID :"+this.cateData);
+  // }
+
+
+  // getListProductData() {
+  //   this.listProductService
+  //     .getListProfile()
+  //     .then((data) => {
+  //       this.listProductData = data;
+  //       // console.log("this.listProductData : "+JSON.stringify(this.listProductData));
+  //     }, (err) => {
+  //       this.log.error(err);
+  //     });
+  // }
+  getdatatest(){
+    this.listProductService.postDataCategory(this.cateData._id).then((data) =>{
+      console.log("DATA from server : " + data);
+      this.listProductData = data;
+    })
   }
 
-  onClickproductdescriptions(){
-    this.navCtrl.push(ProductDescriptionPage);
+
+  onClickproductdescriptions(event){
+    // alert("AAAAAAAAAAA"+JSON.stringify(event));
+    this.navCtrl.push(ProductDescriptionPage, { 'itemClicked' :event});
   }
 }

@@ -16,13 +16,13 @@
 <ion-content>
   <ion-card>
     <ion-card-header>
-      <h2 class="title">{{productdata.productdescriptions.name}}</h2>
+      <h2 class="title">{{itemclick.name}}</h2>
     </ion-card-header>
     <ion-card-content class="image">
       <!-- <img [src]="productdata.productdescriptions.image"> -->
 
       <ion-slides pager="true">
-        <ion-slide *ngFor=" let g of  productdata.productdescriptions.image">
+        <ion-slide *ngFor=" let g of  itemclick.image">
           <img [src]="g">
         </ion-slide>
       </ion-slides>
@@ -31,36 +31,15 @@
 
 
     <ion-card-content>
-      <p class="color-orenge-custom" text-justify>{{productdata.productdescriptions.detail}}</p>
+      <p class="color-orenge-custom" text-justify>{{itemclick.description}}</p>
     </ion-card-content>
 
     <ion-card-content>
       <ion-list>
-        <ion-item>
-          <ion-label>Sugar</ion-label>
-          <ion-select [(ngModel)]="sugar">
-            <ion-option value="hight">hight</ion-option>
-            <ion-option value="medium">medium</ion-option>
-            <ion-option value="low">low</ion-option>
-          </ion-select>
-        </ion-item>
-      </ion-list>
-      <ion-list>
-        <ion-item>
-          <ion-label>Degee</ion-label>
-          <ion-select [(ngModel)]="degee">
-            <ion-option value="reguler">reguler</ion-option>
-            <ion-option value="half">half-caf</ion-option>
-            <ion-option value="de">de-caf</ion-option>
-          </ion-select>
-        </ion-item>
-      </ion-list>
-      <ion-list>
-        <ion-item>
-            
-          <ion-label>Size</ion-label>        
-          <ion-select [(ngModel)]="selectSize">
-            <ion-option *ngFor="let d of productdata.productdescriptions.price" [value]="d">{{ d.size }}</ion-option>
+        <ion-item *ngIf="itemclick.price[0].type">
+          <ion-label>Type</ion-label>
+          <ion-select [(ngModel)]="Type" (ngModelChange)="onChane()">
+            <ion-option  *ngFor="let item of itemclick.price" [value]="item">{{ item.type }}</ion-option>
           </ion-select>
         </ion-item>
       </ion-list>
@@ -75,7 +54,7 @@
             </ion-icon>
           </ion-col>
           <ion-col col-6>
-            <p class="price-pomotions">฿ {{selectSize.price}}
+            <p class="price-pomotions">฿ {{Type.netprice}}
               <!-- <span class="text-decoration">฿ {{productdata.productdescriptions.normalprice}} </span>
               <span> -{{productdata.productdescriptions.discount}} </span>
               <span> {{productdata.productdescriptions.discounttype}} </span> -->
@@ -92,7 +71,7 @@
       <ion-grid class="grid-font">
         <ion-row>
           <ion-col col-3 align-self-center>
-            <img  class="image-logo" [src]="productdata.logo">
+            <img class="image-logo" [src]="productdata.logo">
           </ion-col>
           <ion-col col-9>
             <ion-row>
@@ -103,11 +82,11 @@
             </ion-row>
             <ion-row>
               <ion-col col-12 class="icon-star">
-                  <ion-icon ios="ios-star" md="md-star"></ion-icon>
-                  <ion-icon ios="ios-star" md="md-star"></ion-icon>
-                  <ion-icon ios="ios-star" md="md-star"></ion-icon>
-                  <ion-icon ios="ios-star" md="md-star"></ion-icon>
-                  <ion-icon ios="ios-star-half" md="md-star-half"></ion-icon>
+                <ion-icon ios="ios-star" md="md-star"></ion-icon>
+                <ion-icon ios="ios-star" md="md-star"></ion-icon>
+                <ion-icon ios="ios-star" md="md-star"></ion-icon>
+                <ion-icon ios="ios-star" md="md-star"></ion-icon>
+                <ion-icon ios="ios-star-half" md="md-star-half"></ion-icon>
               </ion-col>
             </ion-row>
           </ion-col>
@@ -121,7 +100,8 @@
 
   <ion-card>
     <ion-card-content>
-      <list-scoll-x [populars]="homedata.popularproducts"></list-scoll-x>
+      <h4 class="categories-title">{{'สินค้า'}}<span class="see-all" (click)="openPageProductList()">see all</span></h4>
+      <list-scoll-x [populars]="homedata.popularproducts" (click)="openPageProduc()"></list-scoll-x>
     </ion-card-content>
   </ion-card>
 

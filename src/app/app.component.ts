@@ -1,3 +1,4 @@
+import { CategoryPage } from '../pages/category/category';
 import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav, App, ToastController } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,8 +24,10 @@ export class MyApp {
   // make WalkthroughPage the root (or first) page
   //rootPage: any = WalkthroughPage;
   // rootPage: any = FunctionalitiesPage;
-  //  rootPage: any = HomePage;
+  //  rootPage: any = CategoryPage;
   rootPage: any = TabsNavigationPage;
+
+  
   textDir: string = "ltr";
 
   pages: Array<{title: any, icon: string, component: any}>;

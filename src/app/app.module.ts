@@ -1,3 +1,4 @@
+import { CategoryPage } from '../pages/category/category';
 import { ProductDescriptionPage } from '../pages/product-description/product-description';
 import { ManuPage } from '../pages/manu/manu';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, ChangeDetectorRef } from '@angular/core';
@@ -100,6 +101,8 @@ import { CameraProvider } from '../providers/camera/camera';
 import { UndefinedProvider } from '../providers/undefined/undefined';
 import { AlertProvider } from '../providers/alert/alert';
 import { ToastProvider } from '../providers/toast/toast';
+import { CategoryServiceProvider } from '../providers/category-service/category-service';
+import { ListItemTestComponent } from '../components/list-item-test/list-item-test';
 
 
 export function createTranslateLoader(http: Http) {
@@ -142,7 +145,9 @@ export function createTranslateLoader(http: Http) {
     CartListComponent,
     SearchbarComponent,
     ManuPage,
-    ProductDescriptionPage
+    ProductDescriptionPage,
+    CategoryPage,
+    ListItemTestComponent
   ],
   imports: [
     BrowserModule,
@@ -176,7 +181,8 @@ export function createTranslateLoader(http: Http) {
     LoginPage,
     RegisterPage,
     ManuPage,
-    ProductDescriptionPage
+    ProductDescriptionPage,
+    CategoryPage
 
   ],
   providers: [
@@ -218,7 +224,8 @@ export function createTranslateLoader(http: Http) {
     CameraProvider,
     UndefinedProvider,
     AlertProvider,
-    ToastProvider
+    ToastProvider,
+    CategoryServiceProvider
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

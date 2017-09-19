@@ -15,22 +15,22 @@ export class ProductdescriptionsProvider {
   constructor(public http: Http) {
     console.log('Hello ProductdescriptionsProvider Provider');
   }
-  getData(): Promise<ProductDescriptionModel> {
-    return this.http.get('./assets/example_data/productdescriptions.json')
-      .toPromise()
-      .then(response => response.json() as ProductDescriptionModel)
-      .catch(this.handleError);
-  }
+  // getData(): Promise<ProductDescriptionModel> {
+  //   return this.http.get('./assets/example_data/productdescriptions.json')
+  //     .toPromise()
+  //     .then(response => response.json() as ProductDescriptionModel)
+  //     .catch(this.handleError);
+  // }
 
-  getDataScollX(): Promise<ProductDescriptionModel>{
-    return this.http.get('./assets/example_data/home.json')
-    .toPromise()
-    .then(response => response.json() as ProductDescriptionModel)
-    .catch(this.handleError);
-  }
-  private handleError(error: any): Promise<any> { 
-    return Promise.reject(error.message || error);
+  // getDataScollX(): Promise<ProductDescriptionModel>{
+  //   return this.http.get('./assets/example_data/home.json')
+  //   .toPromise()
+  //   .then(response => response.json() as ProductDescriptionModel)
+  //   .catch(this.handleError);
+  // }
+  // private handleError(error: any): Promise<any> { 
+  //   return Promise.reject(error.message || error);
 
-  }
+  // }
 
 }

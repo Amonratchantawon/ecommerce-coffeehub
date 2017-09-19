@@ -19,6 +19,7 @@ export class ProductDetailPage {
   productdetailData: ProductDetailModel = new ProductDetailModel;
   constructor(public navCtrl: NavController, public navParams: NavParams, public productDetailService: ProductDetailServiceProvider, public log: LogServiceProvider) {
     this.product = navParams.get('title');
+ 
   }
 
   ionViewDidLoad() {

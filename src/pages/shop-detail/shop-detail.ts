@@ -1,3 +1,6 @@
+import { ProductDescriptionPage } from '../product-description/product-description';
+import { ManuPage } from '../manu/manu';
+import { ListProductPage } from '../list-product/list-product';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ShopModel } from '../shop-detail/shop-detail.model';
@@ -46,5 +49,13 @@ export class ShopDetailPage {
     this.callNumber.callNumber("0930241530",true)
     .then(() => console.log('Launched dialer!'))
     .catch(() => console.log('Error launching dialer'));
+  }
+
+  openPageProductList(){
+    this.navCtrl.push(ManuPage);
+  }
+
+  openPageProduc(){
+    this.navCtrl.push(ProductDescriptionPage);
   }
 }

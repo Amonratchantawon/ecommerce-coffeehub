@@ -1,0 +1,26 @@
+[
+    {
+        "description": "drink category",
+        "image": [
+            "https://static1.squarespace.com/static/54c5468de4b039d9590f4251/5853e89c893fc05274762690/58542f1cd2b8575a1dddba5f/1482760930911/IMG_6805-2.jpg",
+            "https://static1.squarespace.com/static/551446bee4b0959b1053f9f7/58051cf8f7e0abd6e8f275ef/58051e3f2e69cfedd1fc6c3c/1476730614403/IMG_1037.JPG"
+        ],
+        "name": "Drink"
+    },
+    {
+        "description": "Dessert category",
+        "image": [
+            "https://www.fitnessmagazine.com/sites/fitnessmagazine.com/files/1000-dessert-smoothies-vegan-banana-cream-pie-blizzards-7-ingredients-super-creamy-so-delicious.jpg",
+            "http://images.shape.mdpcdn.com/sites/shape.com/files/vegan-tofu-dessert.jpg"
+        ],
+        "name": "Dessert"
+    },
+    {
+        "description": "Food category",
+        "image": [
+            "http://i.imgur.com/cDh6kby.jpg",
+            "https://protrainf3.com/wp-content/uploads/2017/08/salmon-burger-1000x1000.jpg"
+        ],
+        "name": "Food"
+    }
+]

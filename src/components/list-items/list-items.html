@@ -12,12 +12,12 @@
     </ion-col>
   </ion-row>
   <ion-list >
-    <ion-item *ngFor="let item of items" >
+    <button ion-item *ngFor="let item of items" (click)="onClick(item)">
           <ion-row >
             <ion-col no-padding width-33 class="magin-right-10-custom">
               <preload-image [ratio]="{w:1, h:1}" [src]="item.image"></preload-image>
             </ion-col>
-             <ion-col width-50 >
+             <ion-col width-50>
               <h3 class="h3-name">{{item.name}}</h3>
               <p class="color-orenge-custom">{{item.price | number}} {{item.currency | translate}}</p>
               <p><span class="text-decoration">{{item.normalprice | number}} {{item.currency | translate}}</span> -{{item.discount | number}} {{item.discounttype | translate}}</p>
@@ -27,12 +27,12 @@
               <!--<ion-icon name="star"></ion-icon> <ion-icon name="star"></ion-icon> <ion-icon name="star"></ion-icon> (19)</p>-->
             </ion-col> 
             <ion-col width-17 text-center align-self-center>
-                <button ion-button color="danger" class="peel" (click)="onClick(item)"><ion-icon ios="ios-cart" md="md-cart"></ion-icon></button>
+                <button ion-button color="danger" class="peel" (click)="clickTocart()"><ion-icon ios="ios-cart" md="md-cart"></ion-icon></button>
             </ion-col> 
             
           </ion-row>
           
-    </ion-item>
+    </button>
 
   </ion-list>
 </div>

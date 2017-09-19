@@ -1,3 +1,4 @@
+import { CategoryModel } from '../category/category.model';
 import { ListProductPage } from '../list-product/list-product';
 import { MenuModel } from './manu.model';
 import { ManuProvider } from '../../providers/manu/manu';
@@ -16,7 +17,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'manu.html',
 })
 export class ManuPage {
-  menuData :MenuModel = new MenuModel();
+  menuData :Array<CategoryModel> = new Array<CategoryModel>()
   constructor(public navCtrl: NavController, public navParams: NavParams,public manuProvider:ManuProvider) {
   }
 
@@ -29,12 +30,15 @@ export class ManuPage {
     this.manuProvider.getData().then(res=>{
       this.menuData = res;
       // alert(JSON.stringify(res));
+      // console.log(res);
     }).catch(err =>{
       // alert(JSON.stringify(err));
     });
   }
 
-  onClicktomenu(){
-    this.navCtrl.push(ListProductPage);
+  onClicktomenu(item){
+    console.log("item menu  : "+ JSON.stringify(item));
+    this.navCtrl.push(ListProductPage, {'itemdata' : item});
+
   }
 }

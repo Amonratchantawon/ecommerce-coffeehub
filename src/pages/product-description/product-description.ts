@@ -1,3 +1,5 @@
+import { ListProductModel, PriceModel } from '../list-product/list-product.model';
+import { ManuPage } from '../manu/manu';
 import { ShopDetailPage } from '../shop-detail/shop-detail';
 
 import { HomeModel } from '../home/home.model';
@@ -27,33 +29,46 @@ export class ProductDescriptionPage {
 
   @ViewChild(Slides) slides: Slides;
 
-  selectSize :Price = new Price();
+  // Type:any;
 
+  Type :PriceModel = new PriceModel();
   homedata: HomeModel = new HomeModel();
   productdata: ProductDescriptionModel = new ProductDescriptionModel();
+
+  itemclick:ListProductModel = new  ListProductModel();
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     public productdescriptionsProvider:ProductdescriptionsProvider,
     public homeService: HomeService
   ) {
+    this.itemclick =  this.navParams.data.itemClicked;
+    this.Type = this.itemclick.price[0];
+    console.log("item to description Name >>>>>>>>"+ JSON.stringify(this.itemclick));
+    
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProductDescriptionPage');
-    this.getdataProductDescriptions();
+    
+    // this.getdataProductDescriptions();
     this.getDataScollX();
   }
+  
 
-  getdataProductDescriptions(){
-    
-    this.productdescriptionsProvider.getData().then(res =>{
-      this.productdata = res;
-      
-    this.selectSize =  this.productdata.productdescriptions.price[0];
-      console.log("productDescription........"+JSON.stringify(this.productdata));
-    })
+  onChane(){
+    console.log("data type", this.Type);
   }
+
+  // getdataProductDescriptions(){
+    
+  //   this.productdescriptionsProvider.getData().then(res =>{
+  //     this.productdata = res;
+      
+  //   this.selectSize =  this.productdata.productdescriptions.price[0];
+  //     console.log("productDescription........"+JSON.stringify(this.productdata));
+  //   })
+  // }
   getDataScollX(){
     this.homeService
     .getData()
@@ -72,6 +87,16 @@ export class ProductDescriptionPage {
     this.slides.slideTo(2, 500);
   }
 
+  openPageProductList(){
+    this.navCtrl.push(ManuPage);
+  }
 
+  openPageProduc(){
+    this.navCtrl.push(ProductDescriptionPage);
+  }
+
+  orderProduct(){
+    alert("add to cart sucess");
+  }
 
 }

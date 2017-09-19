@@ -50,7 +50,7 @@
     </ion-item>
   </ion-list>
 
-  <h4 *ngIf="shopDetailData.shop.products && shopDetailData.shop.products.length > 0" class="categories-title">{{'สินค้า'}}<span class="see-all">see all</span></h4>
-  <list-scoll-x *ngIf="shopDetailData.shop.products && shopDetailData.shop.products.length > 0" [populars]="shopDetailData.shop.products"></list-scoll-x>
+  <h4 *ngIf="shopDetailData.shop.products && shopDetailData.shop.products.length > 0" class="categories-title">{{'สินค้า'}}<span class="see-all" (click)="openPageProductList()">see all</span></h4>
+  <list-scoll-x *ngIf="shopDetailData.shop.products && shopDetailData.shop.products.length > 0" [populars]="shopDetailData.shop.products"  (click)="openPageProduc()"></list-scoll-x>
 
 </ion-content>

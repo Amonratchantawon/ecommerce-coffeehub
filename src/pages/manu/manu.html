@@ -13,19 +13,23 @@
 </ion-header>
 
 
-<ion-content >
+<ion-content>
 
 
   <ion-row class="grid-items">
-    <ion-col width-100 class="grid-item" *ngFor="let item of menuData.popularshops" >
-      <background-image tappable class="item-heading" [src]="item.image" (click)="onClicktomenu()">
-        <ion-row class="heading-row">
-          <ion-col no-padding width-100>
-            <h2 class="item-title">{{item.name}}</h2>
-            <h5 class="item-detail">{{item.detail}}</h5>
-          </ion-col>
-        </ion-row>
-      </background-image>
+    <ion-col width-100 class="grid-item" *ngFor="let item of menuData">
+      <ion-slides pager="true" autoplay="3000" loop effect="flip">
+        <ion-slide *ngFor=" let g of item.image" >
+          <background-image tappable class="item-heading" [src]="g" (click)="onClicktomenu(item)">
+            <ion-row class="heading-row">
+              <ion-col no-padding width-100>
+                <h2 class="item-title">{{item.name}}</h2>
+                <h5 class="item-detail">{{item.description}}</h5>
+              </ion-col>
+            </ion-row>
+          </background-image>
+        </ion-slide>
+      </ion-slides>
     </ion-col>
   </ion-row>
 

@@ -1,8 +1,8 @@
+import { ProductSearchModel } from './search.model';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
-import { SearchModel } from './search.model';
 import { LogServiceProvider } from '../../providers/log-service/log-service';
 
 /*
@@ -18,10 +18,10 @@ export class SearchServiceProvider {
     this.log.info('Hello SearchServiceProvider Provider');
   }
 
-  getData(): Promise<SearchModel> {
+  getData(): Promise<ProductSearchModel> {
     return this.http.get('./assets/example_data/search.json')
       .toPromise()
-      .then(response => response.json() as SearchModel)
+      .then(response => response.json() as ProductSearchModel)
       .catch(this.handleError);
   }
 
