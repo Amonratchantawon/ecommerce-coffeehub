@@ -1,3 +1,5 @@
+import { RequestOptions,Headers } from '@angular/http';
+import { ListProductModel } from '../list-product/list-product.model';
 import { ProductSearchModel } from './search.model';
 import { ProductDescriptionPage } from '../product-description/product-description';
 import { Component } from '@angular/core';
@@ -18,8 +20,13 @@ import { LogServiceProvider } from '../../providers/log-service/log-service';
   templateUrl: 'search.html',
 })
 export class SearchPage {
-  searchData: ProductSearchModel = new ProductSearchModel();
-  constructor(public navCtrl: NavController, public navParams: NavParams, public searchServiceProvider: SearchServiceProvider, public log: LogServiceProvider) {
+  searchData: Array<ListProductModel> = new Array<ListProductModel>();
+
+
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public searchServiceProvider: SearchServiceProvider, 
+    public log: LogServiceProvider) {
   }
 
   ionViewDidLoad() {
@@ -28,14 +35,10 @@ export class SearchPage {
   }
 
   getSearchData() {
-    this.searchServiceProvider.getData().then((data) => {
-      this.searchData = data;
-      window.localStorage.setItem('array', JSON.stringify(this.searchData));
-
-        this.log.info(this.searchData);
-    }, (error) => {
-        this.log.error(error);
-    });
+   this.searchServiceProvider.getData().then(res=>{
+    this.searchData = res;
+    console.log(this.searchData);
+   });
   }
 
   // searchInput(e) {
@@ -47,7 +50,8 @@ export class SearchPage {
   // }
 
   clickToproductdes(event){
-    this.navCtrl.push(ProductDescriptionPage, event)
+    this.navCtrl.push(ProductDescriptionPage, { 'itemClicked' :event});
   }
+
 
 }

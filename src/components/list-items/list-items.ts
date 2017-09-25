@@ -21,7 +21,7 @@ export class ListItemsComponent {
   @Input() showToolbar: boolean = false;
   @Output() itemClicked: EventEmitter<any> = new EventEmitter<any>();
   constructor(public log: LogServiceProvider) {
-
+    console.log(JSON.stringify(this.items));
   }
 
   onClick(item) {

@@ -13,7 +13,7 @@
 </ion-header>
 
 <ion-content>
-<!-- <list-items [items]="listProductData" (itemClicked)="onClickproductdescriptions()"></list-items> -->
-<list-item-test [items]="listProductData" (callbackItem)="onClickproductdescriptions($event)" ></list-item-test>
+<list-items [items]="listProductData" [showSearch]="true" [showToolbar] = "true" (itemClicked)="onClickproductdescriptions($event)"></list-items>
+<!-- <list-item-test [items]="listProductData" (callbackItem)="onClickproductdescriptions($event)" ></list-item-test> -->
 
 </ion-content>
