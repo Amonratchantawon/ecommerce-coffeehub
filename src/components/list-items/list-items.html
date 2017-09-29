@@ -12,12 +12,12 @@
     </ion-col>
   </ion-row>
   <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="onClick(item)">
+      <ion-item ion-item *ngFor="let item of items" >
           <ion-row >
-            <ion-col no-padding width-33 class="magin-right-10-custom">
+            <ion-col no-padding width-33 class="magin-right-10-custom" (click)="onClick(item)">
               <preload-image [ratio]="{w:1, h:1}" [src]="item.image[0]"></preload-image>
             </ion-col>
-             <ion-col width-50>
+             <ion-col width-50 (click)="onClick(item)">
               <h3 class="h3-name">{{item.name}}</h3>
               <div *ngFor="let itemprice of item.price">
                 <p class="color-orenge-custom">{{ itemprice.type}} ฿ <span *ngIf="itemprice.discount == 0">{{itemprice.price }} </span><span class="text-decoration" *ngIf="itemprice.discount !== 0" > {{itemprice.price }}  </span><span *ngIf="itemprice.discount !== 0">{{itemprice.netprice }}</span> </p>
@@ -25,12 +25,9 @@
              
             </ion-col> 
             <ion-col width-17 text-center align-self-center>
-                <button ion-button color="danger" class="peel" (click)="clickTocart()"><ion-icon ios="ios-cart" md="md-cart"></ion-icon></button>
-    </ion-col>
-
-    </ion-row>
-
-    </button>
-
+                <button ion-button color="danger" class="peel" (click)="clickTocart(item)"><ion-icon ios="ios-cart" md="md-cart"></ion-icon></button>
+      </ion-col>
+      </ion-row>
+      </ion-item>
   </ion-list>
 </div>

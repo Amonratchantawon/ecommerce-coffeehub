@@ -51,8 +51,6 @@ export class ListProductServiceProvider {
   //     });
   //   })
   // }
-
-
   postDataCategory(cateId): Promise<any> {
     return new Promise((resolve, reject) => {
         this.http.get(this.apiUrl + 'api/products/cate/'+ cateId ).map(res => {

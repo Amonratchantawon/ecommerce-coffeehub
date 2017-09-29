@@ -14,7 +14,7 @@ import { LogServiceProvider } from '../../providers/log-service/log-service';
 @Injectable()
 export class SearchServiceProvider {
 
-  apiUrl: string = 'http://localhost:3000/';
+  apiUrl: string = 'https://coffeehubserver.herokuapp.com/';
   headers = new Headers({
     'Content-Type': 'application/json'
   });

@@ -23,13 +23,23 @@ export class CartPage {
   loading: any;
   cart: CartModel = new CartModel();
   counterForm: any;
-  constructor(public navCtrl: NavController, 
+
+  dataSeclect: any;
+
+  constructor(public navCtrl: NavController,
     public navParams: NavParams,
-    public cartService:CartService,
-    public loadingCtrl:LoadingController,
-    public log:LogServiceProvider
+    public cartService: CartService,
+    public loadingCtrl: LoadingController,
+    public log: LogServiceProvider
   ) {
-    this.loading = loadingCtrl.create();
+    
+
+    this.dataSeclect = this.navParams.data;
+    // this.cart.items = this.cart.items ? this.cart.items : [];
+    // this.cart.items.push(this.dataSeclect);
+    // console.log("dataSeclect : " + JSON.stringify(this.dataSeclect));
+
+    // this.loading = loadingCtrl.create();
     this.counterForm = new FormGroup({
       counter: new FormControl()
     });
@@ -47,11 +57,11 @@ export class CartPage {
       });
   }
 
-  gotoProductDetail(item){
-    this.navCtrl.push(ProductDetailPage,item)
+  gotoProductDetail(item) {
+    this.navCtrl.push(ProductDetailPage, item)
   }
 
-  onPayment(cart){
-    console.log(cart);
+  onPayment(cart) {
+    // console.log(cart);
   }
 }

@@ -1,3 +1,4 @@
+import { ListProductModel } from '../list-product/list-product.model';
 import { ProductDescriptionPage } from '../product-description/product-description';
 // import { ProductDescriptionModel } from '../product-description/productDescriptions.model';
 import { ManuPage } from '../manu/manu';
@@ -24,7 +25,8 @@ import { LogServiceProvider } from '../../providers/log-service/log-service';
 })
 export class HomePage {
   //images: Array<string> = [];
-  home: HomeModel = new HomeModel();
+  home: Array<ListProductModel> = new Array<ListProductModel>();
+  datahome: HomeModel = new HomeModel();
   // dataDescriptions :ProductDescriptionModel = new ProductDescriptionModel();
   loading: any;
   constructor(public navCtrl: NavController, 
@@ -47,7 +49,14 @@ export class HomePage {
         this.log.info(data);
         this.loading.dismiss();
       });
+
+      this.homeService.getDatahome().then((data)=>{
+        this.datahome = data;
+        console.log(this.datahome);
+      })
   }
+
+
 
   // getdataDescriptions(){
   //   this.homeService.getDataDescription().then( res =>{

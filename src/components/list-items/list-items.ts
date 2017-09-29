@@ -2,6 +2,7 @@
 // import { window } from 'rxjs/operator/window';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { LogServiceProvider } from '../../providers/log-service/log-service';
+import { AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the ListItemsComponent component.
@@ -20,7 +21,8 @@ export class ListItemsComponent {
   @Input() showSearch: boolean = true;
   @Input() showToolbar: boolean = false;
   @Output() itemClicked: EventEmitter<any> = new EventEmitter<any>();
-  constructor(public log: LogServiceProvider) {
+  @Output() itemSelectType: EventEmitter<any> = new EventEmitter<any>();
+  constructor(public log: LogServiceProvider,public alertController:AlertController) {
     console.log(JSON.stringify(this.items));
   }
 
@@ -43,6 +45,15 @@ export class ListItemsComponent {
         return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
+  }
+
+  clickTocart(item){
+    // alert("modle");
+    this.itemSelectType.emit(item);
+
+    // let alert = this.alertController.create();
+    // alert.setTitle('Lightsaber color');
+
   }
   
 }

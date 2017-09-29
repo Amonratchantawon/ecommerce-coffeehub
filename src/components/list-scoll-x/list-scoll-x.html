@@ -1,11 +1,16 @@
 <ion-scroll scrollX="true" class="horizontal-categories">
   <ion-row class="categories-row">
-    <ion-col width-30 class="horizontal-item" *ngFor="let popular of populars" 
-      (click) = "_selectedItem(popular)">
-      <preload-image [ratio]="{w:1, h:1}" [src]="popular.image" title="popular.title"></preload-image>
+    <ion-col width-30 class="horizontal-item" *ngFor="let popular of populars" (click)="_selectedItem(popular)">
+      <preload-image [ratio]="{w:1, h:1}" [src]="popular.image[0]"></preload-image>
       <div class="product-box">
-          <p class="txt-centr">{{popular.name}}</p>
-          <p class="txt-centr2">{{popular.price | number}}</p>
+        <p class="txt-centr">{{popular.name}}</p>
+        <!-- <p class="txt-centr2">{{popular.price[0].price | number}}</p> -->
+        <p class="txt-centr2"> ฿ 
+          <span *ngFor="let g of popular.price; let i = index;">
+              {{g.price | number}}
+              <span *ngIf="(i + 1) !== popular.price.length">,</span>
+            </span>
+        </p>
       </div>
     </ion-col>
   </ion-row>

@@ -11,12 +11,12 @@ import { LogServiceProvider } from '../../providers/log-service/log-service';
   templateUrl: 'cart-list.html'
 })
 export class CartListComponent {
-  @Input() carts: any;
+  // @Input() carts: any;
+  @Input() selectData:any;
   text: string;
 
   constructor(public log: LogServiceProvider) {
-    this.log.info('Hello CartListComponent Component');
-    this.text = 'Hello World';
+  //  console.log("componentCart : "+JSON.stringify(this.selectData));
   }
 
   onClickQty(event, data) {
@@ -28,12 +28,12 @@ export class CartListComponent {
 
   calculete() {
     
-    this.carts.totalamount = 0;
-    for (var i = 0; i < this.carts.items.length; i++) {
-      this.carts.items[i].amount = 0;
-      this.carts.items[i].amount = this.carts.items[i].qty * this.carts.items[i].product.price;
-      this.carts.totalamount += this.carts.items[i].amount;
-    }
+    // this.carts.totalamount = 0;
+    // for (var i = 0; i < this.carts.items.length; i++) {
+    //   this.carts.items[i].amount = 0;
+    //   this.carts.items[i].amount = this.carts.items[i].qty * this.carts.items[i].product.price;
+    //   this.carts.totalamount += this.carts.items[i].amount;
+    // }
   }
 
 }

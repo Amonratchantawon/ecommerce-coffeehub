@@ -14,13 +14,14 @@
 
 
 <ion-content>
-  <ads-header-bar [images]="home.images"></ads-header-bar>
+  <ads-header-bar [images]="datahome.images"></ads-header-bar>
   <h4 class="categories-title">{{'LASTVISIT' | translate}} <span class="see-all" (click)="openPageProductList()">see all</span></h4>
-  <list-scoll-x [populars]="home.lastvisit" (selectedItem)="selectedItem($event)"></list-scoll-x>
+  <list-scoll-x [populars]="home" (selectedItem)="selectedItem($event)"></list-scoll-x>
+
   <h4 class="categories-title">{{'SHOP' | translate}} <span class="see-all" (click)="openPageShopList()">see all</span></h4>
-  <list-grid [items]="home.popularshops" (selectedItem)="selectedShop($event)"></list-grid>
+  <list-grid [items]="datahome.popularshops" (selectedItem)="selectedShop($event)"></list-grid>
   <h4 class="categories-title">{{'POPULAR' | translate}} <span class="see-all" (click)="openPageProductList()">see all</span></h4>
-  <list-scoll-x [populars]="home.popularproducts" (selectedItem)="selectedItem($event)"></list-scoll-x>
+  <list-scoll-x [populars]="home" (selectedItem)="selectedItem($event)"></list-scoll-x>
   <h4 class="categories-title">{{'BESTSELLER' | translate}} <span class="see-all" (click)="openPageProductList()">see all</span></h4>
-  <list-scoll-x [populars]="home.bestseller" (selectedItem)="selectedItem($event)"></list-scoll-x>
+  <list-scoll-x [populars]="home" (selectedItem)="selectedItem($event)"></list-scoll-x>
 </ion-content>
