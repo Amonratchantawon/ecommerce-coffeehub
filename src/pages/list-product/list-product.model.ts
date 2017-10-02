@@ -4,20 +4,20 @@
 //     items: Array<ProductItemModel>;
 // }
 export class ListProductModel {
-    _id: String
-    category: String;
-    subcate: String;
-    description: String;
-    shop_id: String;
+    _id: string
+    category: string;
+    subcate: string;
+    description: string;
+    shop_id: string;
     price: Array<PriceModel>;
     image: Array<string>;
-    name: String;
+    name: string;
 }
 
 export class PriceModel {
     price: number;
-    type: String;
-    discount: Number;
-    netprice: Number;
-    _id: String;
+    type: string;
+    discount: number;
+    netprice: number;
+    _id: string;
 }

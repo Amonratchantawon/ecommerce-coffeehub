@@ -16,28 +16,40 @@
     </ion-item>
   </ion-list> -->
 
-  <!-- {{selectData|json}} -->
+<!-- {{selectData|json}} -->
 
 <ion-list>
-  <ion-item >
-    
+  <ion-item *ngFor="let item of selectData">
+
     <ion-col no-padding width-33 item-left class="magin-right-10-custom">
-        <preload-image [ratio]="{w:1, h:1}" [src]="selectData.product.image[0]"></preload-image>
-      </ion-col>
-    
+      <preload-image [ratio]="{w:1, h:1}" [src]="item.product.image[0]"></preload-image>
+    </ion-col>
+
     <ion-col>
-    <h2 class="item-title">{{selectData.product.name}}</h2>
-    <!-- <p *ngIf="data.product.issize"><b> Size : {{selectData.product.size.detail}} - {{selectData.selectedsize}}</b></p> -->
-    <p ><b>{{selectData.selectprice}} Baht</b></p>
-    
-    
-    <p> {{selectData.product.description}} </p>
-    
-    <!-- <div class="counter-list">
-      <ion-item no-lines class="counter-item">
-        <counter-input [counterValue]="data.qty" (output)="onClickQty($event,data)"></counter-input>
-      </ion-item>
-    </div> -->
-  </ion-col>
+      <h2 class="item-title">{{item.product.name}}</h2>
+      <!-- <p *ngIf="data.product.issize"><b> Size : {{item.product.size.detail}} - {{item.selectedsize}}</b></p> -->
+      <p><b>price : {{item.price}} Baht</b></p>
+      
+      <p><b>qty : {{item.qty}}</b></p>
+      
+      <p><b>amount : {{item.amount}} Baht</b></p>
+
+      <!-- <div class="counter-list">
+        <ion-item no-lines class="counter-item">
+          <counter-input [counterValue]="data.qty" (output)="onClickQty($event,data)"></counter-input>
+        </ion-item>
+      </div> -->
+
+
+
+    </ion-col>
   </ion-item>
 </ion-list>
+
+<!-- xxxxx: {{selectData | json}} -->
+
+<!-- <ion-list>
+  <ion-item *ngFor="let item of selectData">
+    {{ item.product.name }}
+  </ion-item>
+</ion-list> -->

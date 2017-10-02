@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { LogServiceProvider } from '../../providers/log-service/log-service';
+
+
 /**
  * Generated class for the CartListComponent component.
  *
@@ -12,11 +14,12 @@ import { LogServiceProvider } from '../../providers/log-service/log-service';
 })
 export class CartListComponent {
   // @Input() carts: any;
-  @Input() selectData:any;
+  @Input() selectData: any;
+
   text: string;
 
   constructor(public log: LogServiceProvider) {
-  //  console.log("componentCart : "+JSON.stringify(this.selectData));
+    //  console.log("componentCart : "+JSON.stringify(this.selectData));
   }
 
   onClickQty(event, data) {
@@ -27,7 +30,7 @@ export class CartListComponent {
   }
 
   calculete() {
-    
+
     // this.carts.totalamount = 0;
     // for (var i = 0; i < this.carts.items.length; i++) {
     //   this.carts.items[i].amount = 0;

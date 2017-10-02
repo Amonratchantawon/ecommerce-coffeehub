@@ -1,3 +1,4 @@
+import { OrderProductDetailPage } from '../pages/order-product-detail/order-product-detail';
 import { CategoryPage } from '../pages/category/category';
 import { ProductDescriptionPage } from '../pages/product-description/product-description';
 import { ManuPage } from '../pages/manu/manu';
@@ -104,6 +105,10 @@ import { ToastProvider } from '../providers/toast/toast';
 import { CategoryServiceProvider } from '../providers/category-service/category-service';
 import { ListItemTestComponent } from '../components/list-item-test/list-item-test';
 
+import { AngularFireModule } from "angularfire2";
+import { FIREBASE_CRESENTIALS } from "./firebase.credentials";
+import { AngularFireDatabase } from 'angularfire2/database';
+import { CartProvider } from '../providers/cart/cart';
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -147,11 +152,13 @@ export function createTranslateLoader(http: Http) {
     ManuPage,
     ProductDescriptionPage,
     CategoryPage,
-    ListItemTestComponent
+    ListItemTestComponent,
+    OrderProductDetailPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    AngularFireModule.initializeApp(FIREBASE_CRESENTIALS),
     IonicModule.forRoot(MyApp),
     Ionic2RatingModule,
     TranslateModule.forRoot({
@@ -182,7 +189,8 @@ export function createTranslateLoader(http: Http) {
     RegisterPage,
     ManuPage,
     ProductDescriptionPage,
-    CategoryPage
+    CategoryPage,
+    OrderProductDetailPage
 
   ],
   providers: [
@@ -190,7 +198,7 @@ export function createTranslateLoader(http: Http) {
     CartService,
     // GoogleMapsService,
     LanguageService,
-
+    AngularFireDatabase,
     SplashScreen,
     StatusBar,
     SocialSharing,
@@ -225,7 +233,8 @@ export function createTranslateLoader(http: Http) {
     UndefinedProvider,
     AlertProvider,
     ToastProvider,
-    CategoryServiceProvider
+    CategoryServiceProvider,
+    CartProvider
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

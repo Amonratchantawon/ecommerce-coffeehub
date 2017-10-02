@@ -1,3 +1,6 @@
+import { CartProvider } from '../../providers/cart/cart';
+import { ManuProvider } from '../../providers/manu/manu';
+import { CartItemListModel } from '../../components/cart-list/cart-list.interface';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { CartService } from "./cart.service";
@@ -7,59 +10,82 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { counterRangeValidator } from '../../components/counter-input/counter-input';
 import { LogServiceProvider } from '../../providers/log-service/log-service';
 
+import { AngularFireDatabase, FirebaseListObservable } from "angularfire2/database";
 
-/**
- * Generated class for the CartPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-@IonicPage()
+
 @Component({
   selector: 'page-cart',
   templateUrl: 'cart.html',
 })
 export class CartPage {
-  loading: any;
+  // loading: any;
   cart: CartModel = new CartModel();
-  counterForm: any;
+  totalamount: number;
+  // counterForm: any;
+  // dataSeclect: any;
 
-  dataSeclect: any;
 
+
+  // addCartlist = {} as CartItemListModel;
+  // addCartlistRef$: FirebaseListObservable<CartItemListModel[]>
+  // public carts;
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public cartService: CartService,
     public loadingCtrl: LoadingController,
-    public log: LogServiceProvider
+    public log: LogServiceProvider,
+    private angularFireDatabase: AngularFireDatabase,
+    public manuPVD: ManuProvider,
+    public cartProvider: CartProvider
   ) {
-    
+    // this.carts = manuPVD.cartItems;
+    // this.addCartlistRef$ = this.angularFireDatabase.list('list-product');
 
-    this.dataSeclect = this.navParams.data;
-    // this.cart.items = this.cart.items ? this.cart.items : [];
-    // this.cart.items.push(this.dataSeclect);
-    // console.log("dataSeclect : " + JSON.stringify(this.dataSeclect));
+    // this.dataSeclect = this.navParams.data;
 
-    // this.loading = loadingCtrl.create();
-    this.counterForm = new FormGroup({
-      counter: new FormControl()
-    });
+    // this.counterForm = new FormGroup({
+    //   counter: new FormControl()
+    // });
   }
 
-  ionViewDidLoad() {
-    this.log.info('ionViewDidLoad CartPage');
-    this.loading.present();
-    this.cartService
-      .getData()
-      .then(data => {
-        this.log.info(data);
-        this.cart = data;
-        this.loading.dismiss();
+  // ionViewDidLoad() {
+
+  //   this.cart = this.cartProvider.getCart();
+  //   this.total = 0;
+
+  //   if (this.cart && this.cart.items && this.cart.items.length > 0) {
+  //     this.cart.items.forEach(function(itm){
+  //       this.total += itm.amount;
+  //     });
+  //   }
+  // let aa = window.localStorage.getItem('cart')
+  // alert("cart : " + aa);
+
+  // this.loading.present();
+  // this.cartService
+  //   .getData()
+  //   .then(data => {
+  //     this.log.info(data);
+  //     this.cart = data;
+  //     // this.loading.dismiss();
+  //   });
+  // }
+
+  ionViewWillEnter() {
+    this.cart = this.cartProvider.getCart();
+    let totalamount = 0;
+    if (this.cart && this.cart.items && this.cart.items.length > 0) {
+      this.cart.items.forEach(function (itm) {
+        totalamount += itm.amount;
       });
+    }
+
+    this.totalamount = totalamount;
   }
 
-  gotoProductDetail(item) {
-    this.navCtrl.push(ProductDetailPage, item)
-  }
+  // gotoProductDetail(item) {
+  //   this.navCtrl.push(ProductDetailPage, item)
+  // }
 
   onPayment(cart) {
     // console.log(cart);

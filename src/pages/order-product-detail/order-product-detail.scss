@@ -1,0 +1,25 @@
+page-order-product-detail {
+
+    .ion-content {
+        height: 92% !important;
+    }
+    .item-title {
+        font-weight: bold;
+        color: #0068FF;
+    }
+    .circle-btn {
+        border-radius: 50% !important;
+        padding: 5px !important;
+    }
+    .item-counter {
+        border: none !important;
+    }
+    .magin-right-10-custom{
+        margin-right: 10px;
+    }
+    .counter-list
+	{
+		@include counter-item-styles($white-d, $theme-color-1, $white);
+    }
+
+}

@@ -1,7 +1,7 @@
 import { CategoryModel } from '../../pages/category/category.model';
 import { MenuModel } from '../../pages/manu/manu.model';
 import { Injectable } from '@angular/core';
-import { Http, Headers,RequestOptions } from '@angular/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
@@ -13,41 +13,41 @@ import 'rxjs/add/operator/toPromise';
 */
 @Injectable()
 export class ManuProvider {
+    public cartItems: Array<any> = new Array();
+    apiUrl: string = 'http://localhost:3000/';
+    headers = new Headers({
+        'Content-Type': 'application/json'
+    });
 
-  apiUrl: string = 'http://localhost:3000/';
-  headers = new Headers({
-      'Content-Type': 'application/json'
-  });
+    optionsURL = new RequestOptions({
+        headers: this.headers
+    });
 
-  optionsURL = new RequestOptions({
-      headers: this.headers
-  });
+    constructor(public http: Http) {
+        console.log('Hello ManuProvider Provider');
+    }
+    // getData(): Promise<MenuModel> {
+    //   return this.http.get('./assets/example_data/menu.json')
+    //     .toPromise()
+    //     .then(response => response.json() as MenuModel)
+    //     .catch(this.handleError);
+    // }
 
-  constructor(public http: Http) {
-    console.log('Hello ManuProvider Provider');
-  }
-  // getData(): Promise<MenuModel> {
-  //   return this.http.get('./assets/example_data/menu.json')
-  //     .toPromise()
-  //     .then(response => response.json() as MenuModel)
-  //     .catch(this.handleError);
-  // }
+    // private handleError(error: any): Promise<any> { 
+    //   return Promise.reject(error.message || error);
 
-  // private handleError(error: any): Promise<any> { 
-  //   return Promise.reject(error.message || error);
+    // }
 
-  // }
-
-  getData(): Promise<Array<CategoryModel>> {
-    return new Promise((resolve, reject) => {
-        this.http.get(this.apiUrl + 'api/categories', this.optionsURL).map(res => {
-            return res.json();
-        }).subscribe(data => {
-            resolve(data);
-        }, (error) => {
-            reject(error);
-        });
-      })
+    getData(): Promise<Array<CategoryModel>> {
+        return new Promise((resolve, reject) => {
+            this.http.get(this.apiUrl + 'api/categories', this.optionsURL).map(res => {
+                return res.json();
+            }).subscribe(data => {
+                resolve(data);
+            }, (error) => {
+                reject(error);
+            });
+        })
     }
 
     // postDataCategory(cateId): Promise<any> {

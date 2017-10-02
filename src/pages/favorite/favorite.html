@@ -15,51 +15,6 @@
 
 <ion-content>
 
-  <!--<ion-segment [(ngModel)]="tabs">
-    <ion-segment-button value="0" (click)="selectTab(0)">
-      1
-    </ion-segment-button>
-    <ion-segment-button value="1" (click)="selectTab(1)">
-      2
-    </ion-segment-button>
-    <ion-segment-button value="2" (click)="selectTab(2)">
-      3
-    </ion-segment-button>
-    <ion-segment-button value="3" (click)="selectTab(3)">
-      4
-    </ion-segment-button>
-    <ion-segment-button value="4" (click)="selectTab(4)">
-      5
-    </ion-segment-button>
-    
-  </ion-segment>
-  <ion-slides #pageSlider (ionSlideWillChange)="changeWillSlide($event)">
-    <ion-slide>
-      <h1>ContentTab 1</h1>
-    </ion-slide>
-    <ion-slide>
-      <h1>ContentTab 2</h1>
-    </ion-slide>
-    <ion-slide>
-      <h1>ContentTab 3</h1>
-    </ion-slide>
-    <ion-slide>
-      <h1>ContentTab 4</h1>
-    </ion-slide>
-    <ion-slide>
-      <h1>ContentTab 5</h1>
-    </ion-slide>
-  </ion-slides>-->
-  <!-- <list-items [items]="favoriteData.items"></list-items> -->
-  <!-- {{ favoriteData.title }}
-
-  <ion-list >
-    <ion-item>
-      {{ d.name }}
-      <img [src]="d.image"> 
-       {{ d.descriptons }}
-    </ion-item>
-  </ion-list> -->
 
   <ion-list *ngFor="let d of favoriteData.productfavorite">
     <ion-item-sliding>
