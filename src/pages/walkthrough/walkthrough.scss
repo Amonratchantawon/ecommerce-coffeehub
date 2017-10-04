@@ -6,6 +6,7 @@ walkthrough-page {
 
 	.walkthrough-content
 	{
+		
 		// Default background when bouncing isn't disabled
 		background-color: color($colors, walkthrough, base);
 
@@ -46,8 +47,9 @@ walkthrough-page {
 			.intro-image-row
 			{
 				@include justify-content(center);
-				margin-top: 90px;
-				margin-top: 16vh;
+				
+				// margin-top: 90px;
+				// margin-top: 16vh;
 			}
 
 			.main-title
@@ -72,6 +74,10 @@ walkthrough-page {
 
 		.slide-4
 		{
+
+			background: url(http://www.ilikewallpaper.net/iphone-8-wallpapers/download/27814/Hot-Coffee-City-Life-Winter-iphone-8-wallpaper-ilikewallpaper_com.jpg);
+			background-size:cover;
+			background-repeat: no-repeat;
 			.main-title
 			{
 				margin-top: 15px;
@@ -114,5 +120,21 @@ walkthrough-page {
 				}
 			}
 		}
+	}
+	.slide-1{
+		
+		background: url(https://i.pinimg.com/564x/04/7f/15/047f154565ecc65a5afd27c287debf15.jpg);
+		background-size:cover;
+		background-repeat: no-repeat;
+	}
+	.slide-2{
+		background: url(https://i.pinimg.com/564x/01/70/50/017050a095d30ce25eb954ef1f6bb0a9.jpg);
+		background-size:cover;
+		background-repeat: no-repeat;
+	}
+	.slide-3{
+		background: url(https://i.pinimg.com/564x/84/99/fe/8499fe54660200cf00899d70157fa42f.jpg);
+		background-size:cover;
+		background-repeat: no-repeat;
 	}
 }

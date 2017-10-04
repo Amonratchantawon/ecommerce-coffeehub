@@ -1,3 +1,4 @@
+import { TabsNavigationPage } from '../tabs-navigation/tabs-navigation';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
@@ -19,10 +20,14 @@ import { LoginServiceProvider } from "./login.service";
 export class LoginPage {
   login: FormGroup;
   credential: credentialModel = new credentialModel();
-  constructor(public navCtrl: NavController, public navParams: NavParams, public loginServiceProvider:LoginServiceProvider) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public loginServiceProvider:LoginServiceProvider) {
+
     this.login = new FormGroup({
       username: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required)
+
     });
   }
 
@@ -30,15 +35,20 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
 
-  doLogin() {
+  doLogin(data) {
     this.credential = this.login.value;
-    // let userdata = { "username": this.login.value.username, "password": this.login.value.password };
+    let userdata = { "username": this.login.value.username, "password": this.login.value.password };
     // alert(JSON.stringify(userdata));
-    this.loginServiceProvider.onAuthorization().then((data) => {
-      this.navCtrl.pop();
-    }, (error) => {
-      console.error(error);
-    });
+
+    this.loginServiceProvider.onAuthorization(userdata).then((data)=>{
+      alert(data.roles[0]);
+      if(data.roles[0] == 'user'){
+        this.navCtrl.push(TabsNavigationPage);
+      }else{
+        alert("ไม่มีสิทธ์เข้าใช้งาน")
+      }
+    })
+    
   }
 
   goToSignup() {

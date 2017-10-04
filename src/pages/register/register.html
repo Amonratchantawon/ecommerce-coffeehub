@@ -8,7 +8,7 @@
   <h2 class="auth-title">{{'CREATE_AN_ACCOUNT' | translate}}</h2>
   <form class="signup-form auth-form" [formGroup]="signup" (ngSubmit)="doSignup()">
     <ion-item>
-      <ion-input type="username" placeholder="username" formControlName="username"></ion-input>
+      <ion-input type="username" placeholder="Username" formControlName="username"></ion-input>
     </ion-item>
     <show-hide-container>
       <ion-item>
@@ -21,16 +21,16 @@
       </ion-item>
     </show-hide-container>
     <ion-item>
-      <ion-input type="firstName" placeholder="firstname" formControlName="firstName"></ion-input>
+      <ion-input type="firstName" placeholder="Firstname" formControlName="firstName"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="lastName" placeholder="lastname" formControlName="lastName"></ion-input>
+      <ion-input type="lastName" placeholder="Lastname" formControlName="lastName"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="email" placeholder="email" formControlName="email"></ion-input>
+      <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="tel" placeholder="tel" formControlName="tel"></ion-input>
+      <ion-input type="tel" placeholder="Tel" formControlName="tel"></ion-input>
     </ion-item>
     <button ion-button block class="auth-action-button signup-button" type="submit" [disabled]="!signup.valid">{{'SIGN_UP' | translate}}</button>
   </form>

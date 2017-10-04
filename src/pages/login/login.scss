@@ -1,6 +1,16 @@
 page-login {
+
+	
+
+
 	.login-content
 	{
+		background: url(https://i.pinimg.com/564x/04/7f/15/047f154565ecc65a5afd27c287debf15.jpg);
+		background-size:cover;
+		background-repeat: no-repeat;
+
+		
+
 		.alt-options
 		{
 			.button
@@ -32,4 +42,22 @@ page-login {
 			}
 		}
 	}
+
+	.gggg{
+		opacity: 0.6;
+		filter: alpha(opacity=50);
+	}
+
+	.aaaaa{
+		opacity: 0.6;
+		filter: alpha(opacity=50);
+	}
+
+	.center{
+		margin-top: 50%;
+	}
+
+	// .login-form .auth-form{
+	// 	margin-top: 50%;
+	// }
 }

@@ -1,5 +1,6 @@
+import { WalkthroughPage } from '../walkthrough/walkthrough';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, ActionSheetController, Platform, LoadingController, NavParams } from 'ionic-angular';
+import { IonicPage,App, NavController, ActionSheetController, Platform, LoadingController, NavParams } from 'ionic-angular';
 import { ProfileModel } from '../profile/profile.model';
 import { ProfileServiceProvider } from '../profile/profile.service';
 import { LogServiceProvider } from '../../providers/log-service/log-service';
@@ -37,7 +38,8 @@ export class ProfilePage {
     public loadingCtrl: LoadingController,
     public cameraProvider: CameraProvider,
     public alertService: AlertProvider,
-    public toastProvider: ToastProvider
+    public toastProvider: ToastProvider,
+    private app:App
   ) {
   }
 
@@ -89,8 +91,12 @@ export class ProfilePage {
       'This will log you out of this application.').then((yes) => {
         if (yes) {
           this.toastProvider.create('Logged out of the application');
+          setTimeout(()=> {
+          this.app.getRootNav().setRoot(WalkthroughPage);
+          }, 1000);
         }
       });
+      
   }
 
   toggleNotifications() {

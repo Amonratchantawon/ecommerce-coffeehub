@@ -36,7 +36,7 @@ page-favorite {
     }
 
     .max-lines {
-        display: block; /* or inline-block */
+        display: block; 
         text-overflow: ellipsis;
         word-wrap: break-word;
         overflow: hidden;

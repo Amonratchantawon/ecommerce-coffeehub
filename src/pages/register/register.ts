@@ -19,7 +19,10 @@ import { RegisterServiceProvider } from "./register.service";
 export class RegisterPage {
   signup: FormGroup;
   userInfo: AuthorizeModel = new AuthorizeModel();
-  constructor(public navCtrl: NavController, public navParams: NavParams, public regisService: RegisterServiceProvider) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public regisService: RegisterServiceProvider) {
+
     this.signup = new FormGroup({
       username: new FormControl('', Validators.required),
       firstName: new FormControl('', Validators.required),
@@ -27,8 +30,10 @@ export class RegisterPage {
       email: new FormControl('', Validators.required),
       tel: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
-      confirm_password: new FormControl('', Validators.required)
+      confirm_password: new FormControl('', Validators.required),
+      roles: new FormControl('user', Validators.required)
     });
+
   }
 
   ionViewDidLoad() {
@@ -37,7 +42,7 @@ export class RegisterPage {
 
   doSignup() {
     this.userInfo = this.signup.value;
-    this.regisService.newAuthorization().then((data) => {
+    this.regisService.newAuthorization(this.userInfo).then((data) => {
       this.navCtrl.pop();
     }, (error) => {
       console.error(error);
