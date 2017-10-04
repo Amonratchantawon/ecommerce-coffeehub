@@ -16,7 +16,10 @@
 <ion-content>
 
 
-  <ion-list *ngFor="let d of favoriteData.productfavorite">
+  <ion-list *ngFor="let d of favoriteData.productfavorite; let i = index;">
+    <ion-card>
+   
+    
     <ion-item-sliding>
       <ion-item class="carde-d">
         <ion-avatar item-start>
@@ -27,15 +30,13 @@
               </ion-col>
               <ion-col col-9>
                 <h2>{{d.name}}</h2>
-                <p> {{ d.descriptons }} </p>
+                <p class="max-lines"> {{ d.descriptons }} </p>
                 <p class="price-rigth">
                   <span class="text-decoration">฿ {{d.normalprice}} </span>
                   <!-- <span> -{{d.discount}} </span> -->
                   <!-- <span> {{d.discounttype}} </span> -->
                   ฿ {{ d.price}}
-
                 </p>
-
               </ion-col>
             </ion-row>
           </ion-grid>
@@ -47,12 +48,13 @@
           <ion-icon ios="logo-usd" md="logo-usd"></ion-icon>
           Buy
         </button>
-        <button ion-button color="danger">
+        <button ion-button color="danger" (click)="remove(i)">
             <ion-icon name="delete"></ion-icon>
-            <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+            <ion-icon ios="ios-trash" md="md-trash" ></ion-icon>
             Delete
           </button>
       </ion-item-options>
     </ion-item-sliding>
+  </ion-card>
   </ion-list>
 </ion-content>

@@ -15,6 +15,8 @@ import { LogServiceProvider } from '../../providers/log-service/log-service';
 export class CartListComponent {
   // @Input() carts: any;
   @Input() selectData: any;
+  @Output() deleteItem:EventEmitter<any> = new EventEmitter<any>();
+  @Output() counterInput:EventEmitter<any> = new EventEmitter<any>();
 
   text: string;
 
@@ -22,11 +24,19 @@ export class CartListComponent {
     //  console.log("componentCart : "+JSON.stringify(this.selectData));
   }
 
-  onClickQty(event, data) {
-    data.qty = event;
-    console.log("QTY :" + data.qty);
-    this.calculete();
+  onClickQty(event, i) {
+    let data = {
+      qty: event,
+      itemindex: i
+    };
+    
+    this.counterInput.emit(data);
+    // this.counterInput.emit(data);
     // this.totalQty.emit(data.qty);
+  }
+
+  deleteItemOrder(i){
+    this.deleteItem.emit(i)
   }
 
   calculete() {

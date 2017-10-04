@@ -60,7 +60,6 @@ export class ListProductPage {
 
 
   onClickproductdescriptions(event) {
-    // alert("AAAAAAAAAAA"+JSON.stringify(event));
     this.navCtrl.push(ProductDescriptionPage, { 'itemClicked': event });
   }
 

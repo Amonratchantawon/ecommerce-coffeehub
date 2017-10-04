@@ -72,7 +72,12 @@ export class CartPage {
   // }
 
   ionViewWillEnter() {
-    this.cart = this.cartProvider.getCart();
+    
+    this.calculate();
+  }
+
+  calculate() {
+    this.cart = this.cartProvider.getCart();    
     let totalamount = 0;
     if (this.cart && this.cart.items && this.cart.items.length > 0) {
       this.cart.items.forEach(function (itm) {
@@ -83,9 +88,17 @@ export class CartPage {
     this.totalamount = totalamount;
   }
 
-  // gotoProductDetail(item) {
-  //   this.navCtrl.push(ProductDetailPage, item)
-  // }
+  deleteItem(i) {
+    this.cartProvider.removeCart(i);
+    this.calculate();
+  }
+
+  updateCounter(event) {
+    let qty = event.qty;
+    let index = event.itemindex;
+    this.cartProvider.updateCart(index ,qty );
+    this.calculate();    
+  }
 
   onPayment(cart) {
     // console.log(cart);

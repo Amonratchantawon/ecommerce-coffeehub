@@ -1,8 +1,9 @@
+import { FavoriteServiceProvider } from '../../providers/favorite-service/favorite-service';
 import { ProductDescriptionPage } from '../product-description/product-description';
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 import { FavoriteModel } from '../favorite/favorite.model';
-import { FavoriteServiceProvider } from '../favorite/favorite.service';
+
 import { LogServiceProvider } from '../../providers/log-service/log-service';
 /**
  * Generated class for the FavoritePage page.
@@ -17,14 +18,16 @@ import { LogServiceProvider } from '../../providers/log-service/log-service';
 })
 export class FavoritePage {
   favoriteData: FavoriteModel = new FavoriteModel();
+
   @ViewChild('pageSlider') pageSlider: Slides;
   tabs: any = '0';
   constructor(public navCtrl: NavController, public navParams: NavParams, public favoriteService: FavoriteServiceProvider,public log:LogServiceProvider) {
   }
 
-  ionViewDidLoad() {
+  ionViewWillEnter() {
     this.log.info('ionViewDidLoad FavoritePage');
-    this.getFavoriteData();
+    // this.getFavoriteData();
+     this.getFavoriteData();
   }
   // selectTab(index) {
   //   this.pageSlider.slideTo(index);
@@ -33,15 +36,27 @@ export class FavoritePage {
   // changeWillSlide($event) {
   //   this.tabs = $event._snapIndex.toString();
   // }
-  getFavoriteData() {
-    this.favoriteService
-      .getFavorite()
-      .then((data) => {
-        this.favoriteData = data;
-      }, (err) => {
-       this.log.error(err);
-      });
+  // getFavoriteData() {
+  //   this.favoriteServic
+  //     .getFavorite()
+  //     .then((data) => {
+  //       this.favoriteData = data;
+  //     }, (err) => {
+  //      this.log.error(err);
+  //     });
+  // }
+
+  getFavoriteData(){
+    this.favoriteData = this.favoriteService.getFavorite();
+    console.log(this.favoriteData);
   }
+
+  remove(index){
+    this.favoriteService.removeFavorite(index);
+    this.getFavoriteData();    
+  }
+  
+
 
   getToProductDescriptionPage(){
     this.navCtrl.push(ProductDescriptionPage);

@@ -15,7 +15,7 @@
 
 <ion-content class="list-big-content">
 
-    <list-items [items]="searchData" [showSearch]="true" [showToolbar] = "true" (itemClicked)="clickToproductdes($event)" ></list-items> 
+    <list-items [items]="searchData" [showSearch]="true" [showToolbar] = "true" (itemClicked)="onClickproductdescriptions($event)" (itemSelectType)="alertSelect($event)" ></list-items> 
     <!-- <list-item-test [items]="searchData"></list-item-test> -->
 
 </ion-content>

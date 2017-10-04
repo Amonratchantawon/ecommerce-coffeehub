@@ -1,3 +1,5 @@
+import { FavoriteServiceProvider } from '../../providers/favorite-service/favorite-service';
+import { CartProvider } from '../../providers/cart/cart';
 import { ListProductModel, PriceModel } from '../list-product/list-product.model';
 import { ManuPage } from '../manu/manu';
 import { ShopDetailPage } from '../shop-detail/shop-detail';
@@ -30,55 +32,85 @@ export class ProductDescriptionPage {
   @ViewChild(Slides) slides: Slides;
 
   // Type:any;
-
-  Type :PriceModel = new PriceModel();
-  homedata: HomeModel = new HomeModel();
+  orderScollX: Array<ListProductModel> = new Array<ListProductModel>();
+  Type: PriceModel = new PriceModel();
+  // homedata: HomeModel = new HomeModel();
   productdata: ProductDescriptionModel = new ProductDescriptionModel();
 
-  itemclick:ListProductModel = new  ListProductModel();
+  itemclick: ListProductModel = new ListProductModel();
 
-  constructor(public navCtrl: NavController, 
+  constructor(public navCtrl: NavController,
     public navParams: NavParams,
-    public productdescriptionsProvider:ProductdescriptionsProvider,
-    public homeService: HomeService
+    public productdescriptionsProvider: ProductdescriptionsProvider,
+    public homeService: HomeService,
+    public cartProvider: CartProvider,
+    public favoriteServiceProvider: FavoriteServiceProvider
   ) {
-    this.itemclick =  this.navParams.data.itemClicked;
+    this.itemclick = this.navParams.data.itemClicked;
     this.Type = this.itemclick.price[0];
-    console.log("item to description Name >>>>>>>>"+ JSON.stringify(this.itemclick));
-    
+    // console.log(this.itemclick);
+
+
+
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ProductDescriptionPage');
-    
-    // this.getdataProductDescriptions();
-    this.getDataScollX();
-  }
-  
 
-  onChane(){
+    console.log('ionViewDidLoad ProductDescriptionPage');
+
+    // this.getdataProductDescriptions();
+    // this.getDataScollX();
+    this.getOrderScollX();
+  }
+
+  favoriteItem(itemclick) {
+    console.log(itemclick);
+    // alert(JSON.stringify(itemclick));
+
+    let data = {
+      _id: itemclick._id,
+      name: itemclick.name,
+      image: itemclick.image[0],
+      descriptons: itemclick.description,
+      price: itemclick.price[0].price,
+      normalprice: itemclick.price[0].netprice,
+      discount: itemclick.price[0].discount,
+      discounttype: itemclick.price[0].type
+    };
+
+    console.log(data);
+
+    this.favoriteServiceProvider.addFavorite(data);
+
+  }
+
+  selectedItem(e) {
+    console.log(e);
+    this.navCtrl.push(ProductDescriptionPage, { itemClicked: e });
+  }
+
+
+  onChane() {
     console.log("data type", this.Type);
   }
 
-  // getdataProductDescriptions(){
-    
-  //   this.productdescriptionsProvider.getData().then(res =>{
-  //     this.productdata = res;
-      
-  //   this.selectSize =  this.productdata.productdescriptions.price[0];
-  //     console.log("productDescription........"+JSON.stringify(this.productdata));
-  //   })
-  // }
-  getDataScollX(){
-    this.homeService
-    .getData()
-    .then(data => {
-      this.homedata = data;
-      console.log("homedata"+this.homedata);
-    });
+  getOrderScollX() {
+    this.productdescriptionsProvider.getData().then((res) => {
+      this.orderScollX = res;
+      // console.log(this.orderScollX);
+    })
   }
 
-  onclickToShop(){
+  // getDataScollX(){
+  //   this.homeService
+  //   .getData()
+  //   .then(data => {
+  //     this.homedata = data;
+  //     console.log("homedata"+this.homedata);
+  //   });
+  // }
+
+  onclickToShop() {
     this.navCtrl.push(ShopDetailPage);
   }
 
@@ -87,16 +119,23 @@ export class ProductDescriptionPage {
     this.slides.slideTo(2, 500);
   }
 
-  openPageProductList(){
+  openPageProductList() {
     this.navCtrl.push(ManuPage);
   }
 
-  openPageProduc(){
+  openPageProduc() {
     this.navCtrl.push(ProductDescriptionPage);
   }
 
-  orderProduct(){
-    alert("add to cart sucess");
+  orderProduct() {
+    let cookingProduct = {
+      product: this.itemclick,
+      price: this.Type.netprice,
+      qty: 1
+    };
+
+    this.cartProvider.addCart(cookingProduct);
   }
+
 
 }

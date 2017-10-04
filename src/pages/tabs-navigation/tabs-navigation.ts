@@ -1,3 +1,4 @@
+import { FavoriteServiceProvider } from '../../providers/favorite-service/favorite-service';
 import { CartProvider } from '../../providers/cart/cart';
 import { CartItemListModel } from '../../components/cart-list/cart-list.interface';
 import { Events } from 'ionic-angular';
@@ -22,11 +23,13 @@ export class TabsNavigationPage {
   private badgeNum: number;
   private items: Array<any> = [];
 
-  constructor(public events: Events, public cartProvider: CartProvider) {
+  private badgeFavorite: number;
+
+
+  constructor(public events: Events, public cartProvider: CartProvider ,public favoriteServiceProvider:FavoriteServiceProvider ) {
 
     this.tab1Root = HomePage;
     this.tab2Root = SearchPage;
-    // this.tab3Root = CartPage;
     this.tab3Root = CartPage;
     this.tab4Root = FavoritePage;
     this.tab5Root = ProfilePage;
@@ -44,6 +47,17 @@ export class TabsNavigationPage {
       this.badgeNum = null;
     }
     return this.badgeNum;
+  }
+
+  getFavorite(){
+    this.badgeFavorite = 0;
+    let fav = this.favoriteServiceProvider.getFavorite();
+    if (fav && fav.productfavorite && fav.productfavorite.length > 0) {
+      this.badgeFavorite = fav.productfavorite.length;
+    }else{
+      this.badgeFavorite = null;
+    }
+    return this.badgeFavorite
   }
 
 }

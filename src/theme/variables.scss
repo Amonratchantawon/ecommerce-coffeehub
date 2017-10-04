@@ -10,7 +10,7 @@
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
 
-$white: #FFFFFF;
+$white: #efefef;
 $white-a: darken($white, 3%);
 $white-b: darken($white, 6%);
 $white-c: darken($white, 12%);
@@ -22,7 +22,7 @@ $black-b: lighten($black, 20%);
 $black-c: lighten($black, 40%);
 $black-d: lighten($black, 60%);
 
-$theme-color-1: #00e9d5;
+$theme-color-1: #588c7e;
 $theme-color-2: #ae75e7;
 $theme-color-3: #5e5874;
 
@@ -98,6 +98,32 @@ $colors: (
 // then be future customized. This import comes last
 // so that the above variables are used and Ionic's
 // default are overridden.
+
+$tabs-background: #588c7e;
+
+.tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+  color: rgb(252, 246, 246) ;
+}
+// .tabs-md .tabbar {
+//   background: #5c926e ;
+// }
+
+.tabs-md .tabbar {
+  background: #96ceb4 ;
+}
+
+.tabs-md .tab-button[aria-selected=true] {
+  background-color: #96ceb4 ;
+  // opacity: 0.5;
+  color: #f4f4f4 ;
+}
+.tabs-md .tab-button-icon {
+  color: #f4f4f4 ;
+}
+.tabs-md .tab-button {
+  color: #f4f4f4 ;
+}
+
 
 @import "ionic.theme.default";
 

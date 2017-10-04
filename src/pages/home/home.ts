@@ -29,13 +29,13 @@ export class HomePage {
   datahome: HomeModel = new HomeModel();
   // dataDescriptions :ProductDescriptionModel = new ProductDescriptionModel();
   loading: any;
-  constructor(public navCtrl: NavController, 
+  constructor(public navCtrl: NavController,
     public homeService: HomeService,
     public loadingCtrl: LoadingController,
     public log: LogServiceProvider
 
   ) {
-    
+
     this.loading = this.loadingCtrl.create();
   }
 
@@ -50,10 +50,10 @@ export class HomePage {
         this.loading.dismiss();
       });
 
-      this.homeService.getDatahome().then((data)=>{
-        this.datahome = data;
-        console.log(this.datahome);
-      })
+    this.homeService.getDatahome().then((data) => {
+      this.datahome = data;
+      console.log(this.datahome);
+    })
   }
 
 
@@ -65,21 +65,22 @@ export class HomePage {
   //   })
   // }
 
-  selectedItem(e){
-    this.navCtrl.push(ProductDescriptionPage, e);
+  selectedItem(e) {
+    console.log("page-home :: >>" + JSON.stringify(e));
+    this.navCtrl.push(ProductDescriptionPage, { itemClicked: e });
   }
 
-  selectedShop(e){
+  selectedShop(e) {
     this.navCtrl.push(ShopDetailPage, e);
   }
 
-  xxxx(e){
+  xxxx(e) {
     alert(e);
   }
-  openPageProductList(){
+  openPageProductList() {
     this.navCtrl.push(ManuPage);
   }
-  openPageShopList(){
+  openPageShopList() {
     this.navCtrl.push(ListShopPage);
   }
 }

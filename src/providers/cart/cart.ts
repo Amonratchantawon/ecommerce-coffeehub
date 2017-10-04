@@ -60,6 +60,15 @@ export class CartProvider {
   removeCart(index) {
     let carts = JSON.parse(window.localStorage.getItem('cart'));
     carts.items.splice(index, 1);
+    window.localStorage.setItem('cart', JSON.stringify(carts));
+    return this.getCart();
+  }
+
+  updateCart(index,qty){
+    let carts = JSON.parse(window.localStorage.getItem('cart'));
+    carts.items[index].qty = qty;
+    carts.items[index].amount = carts.items[index].qty * carts.items[index].price;
+    window.localStorage.setItem('cart', JSON.stringify(carts));
     return this.getCart();
   }
 

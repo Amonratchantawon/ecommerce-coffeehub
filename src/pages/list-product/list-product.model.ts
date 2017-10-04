@@ -1,8 +1,4 @@
-// import { ProductItemModel } from "../../app/app.model";
 
-// export class ListProductModel {
-//     items: Array<ProductItemModel>;
-// }
 export class ListProductModel {
     _id: string
     category: string;

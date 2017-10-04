@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Didact+Gothic');
 cart-list {
     .ion-content {
         height: 92% !important;
     }
     .item-title {
         font-weight: bold;
-        color: #0068FF;
+        color: #916B02;
+        // font-family: 'Didact Gothic', sans-serif;
     }
     .circle-btn {
         border-radius: 50% !important;
@@ -15,5 +17,23 @@ cart-list {
     }
     .magin-right-10-custom{
         margin-right: 10px;
+    }
+    .item-block{
+        // margin-top: 0px !important;
+        // margin-bottom: 0px !important;
+        min-height: 0rem !important;
+    }
+    // .size{
+    //     margin-top: 0px !important;
+    //     margin-bottom: 0px !important;
+    // }
+
+    .label-md{
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+        margin-right: 0px !important;
+    }
+    .list-md{
+        margin: -1px 0 0px !important;
     }
 }

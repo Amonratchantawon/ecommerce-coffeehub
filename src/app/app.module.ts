@@ -1,3 +1,4 @@
+import { FavoriteServiceProvider } from '../providers/favorite-service/favorite-service';
 import { OrderProductDetailPage } from '../pages/order-product-detail/order-product-detail';
 import { CategoryPage } from '../pages/category/category';
 import { ProductDescriptionPage } from '../pages/product-description/product-description';
@@ -79,7 +80,6 @@ import { ShopDetailPage } from "../pages/shop-detail/shop-detail";
 import { TestComponent } from '../components/test/test';
 import { CartService } from "../pages/cart/cart.service";
 import { SearchServiceProvider } from '../pages/search/search.service';
-import { FavoriteServiceProvider } from '../pages/favorite/favorite.service';
 import { ProfileServiceProvider } from '../pages/profile/profile.service';
 import { ListProductServiceProvider } from '../pages/list-product/list-product.service';
 import { ListProductPage } from '../pages/list-product/list-product';
@@ -217,7 +217,6 @@ export function createTranslateLoader(http: Http) {
     Camera,
     CallNumber,
     SearchServiceProvider,
-    FavoriteServiceProvider,
     ProfileServiceProvider,
     ListProductServiceProvider,
     ListShopServiceProvider,
@@ -234,7 +233,8 @@ export function createTranslateLoader(http: Http) {
     AlertProvider,
     ToastProvider,
     CategoryServiceProvider,
-    CartProvider
+    CartProvider,
+    FavoriteServiceProvider
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

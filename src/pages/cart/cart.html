@@ -15,17 +15,7 @@
 
 <ion-content>
 
-  <cart-list *ngIf="cart && cart.items && cart.items.length > 0" [selectData]="cart.items"></cart-list>
-
-  <!-- xxxx : {{ carts | json }} -->
-
-  <!-- <ion-list >
-    <ion-item *ngFor="let item of addCartlistRef | async"  >
-      xxxxx{{ item.name }}
-    </ion-item>
-  </ion-list> -->
-
-
+  <cart-list *ngIf="cart && cart.items && cart.items.length > 0" [selectData]="cart.items" (deleteItem)="deleteItem($event)" (counterInput)="updateCounter($event)"></cart-list>
 
 </ion-content>
 
@@ -35,7 +25,7 @@
       <p>Total price</p>
     </ion-col>
     <ion-col width-40 text-right>
-      <p>{{totalamount | number}}</p>
+      <p>{{totalamount | number}}  Baht</p>
     </ion-col>
   </ion-row>
   <button ion-button full color="danger" (click)="onPayment(cart)">{{"PAYMENT" | translate}}</button>

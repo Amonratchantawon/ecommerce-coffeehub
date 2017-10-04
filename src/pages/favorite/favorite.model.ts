@@ -1,16 +1,23 @@
 export class FavoriteModel {
-    titel: String;
+    titel: string;
     productfavorite: Array<Productfavarite>;
 
 }
 export class Productfavarite {
     _id:any;
-    name: String;
-    image: String;
-    descriptons: String;
-    price: Number;
-    normalprice: Number;
-    discount: Number;
-    discounttype: String;
+    name: string;
+    image: Array<string>;
+    descriptons: string;
+    price: Array<PriceModel>;
+    normalprice: number;
+    discount: number;
+    discounttype: string;
 
+}
+export class PriceModel {
+    price: number;
+    type: string;
+    discount: number;
+    netprice: number;
+    _id: string;
 }
