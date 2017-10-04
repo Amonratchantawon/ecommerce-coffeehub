@@ -14,7 +14,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class ManuProvider {
     public cartItems: Array<any> = new Array();
-    apiUrl: string = 'http://localhost:3000/';
+    apiUrl: string = 'https://coffeehubserver.herokuapp.com/';
     headers = new Headers({
         'Content-Type': 'application/json'
     });
@@ -40,7 +40,7 @@ export class ManuProvider {
 
     getData(): Promise<Array<CategoryModel>> {
         return new Promise((resolve, reject) => {
-            this.http.get(this.apiUrl + 'api/categories', this.optionsURL).map(res => {
+            this.http.get(this.apiUrl + 'api/categories').map(res => {
                 return res.json();
             }).subscribe(data => {
                 resolve(data);

@@ -1,7 +1,12 @@
 page-login {
 
-	
+	.toast-container{
+		background: white ;
+	  }
 
+	  ion-toast.success .toast-wrapper {
+		background: green ;
+	}
 
 	.login-content
 	{

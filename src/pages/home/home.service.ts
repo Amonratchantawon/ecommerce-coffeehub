@@ -13,7 +13,7 @@ export class HomeService {
   constructor(public http: Http, public log: LogServiceProvider) {}
 
 
-  apiUrl: string = 'http://localhost:3000/';
+  apiUrl: string = 'https://coffeehubserver.herokuapp.com/';
   headers = new Headers({
     'Content-Type': 'application/json'
   });

@@ -12,7 +12,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class CategoryServiceProvider {
 
-  apiUrl: string = 'https://coffeehubserver.herokuapp.com/';
+  apiUrl: string = 'http://localhost:3000/';
   headers = new Headers({
       'Content-Type': 'application/json'
   });

@@ -1,3 +1,4 @@
+import { ToastProvider } from '../../providers/toast/toast';
 import { TabsNavigationPage } from '../tabs-navigation/tabs-navigation';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -22,7 +23,8 @@ export class LoginPage {
   credential: credentialModel = new credentialModel();
   constructor(public navCtrl: NavController, 
     public navParams: NavParams, 
-    public loginServiceProvider:LoginServiceProvider) {
+    public loginServiceProvider:LoginServiceProvider,
+    public toastProvider: ToastProvider) {
 
     this.login = new FormGroup({
       username: new FormControl('', Validators.required),
@@ -41,12 +43,16 @@ export class LoginPage {
     // alert(JSON.stringify(userdata));
 
     this.loginServiceProvider.onAuthorization(userdata).then((data)=>{
-      alert(data.roles[0]);
+      // alert(data.roles[0]);
       if(data.roles[0] == 'user'){
         this.navCtrl.push(TabsNavigationPage);
       }else{
-        alert("ไม่มีสิทธ์เข้าใช้งาน")
+        alert("ไม่มีสิทธ์เข้าใช้งาน");
+        // this.toastProvider.create("ไม่มีสิทธ์เข้าใช้งาน");
       }
+    },(err)=>{
+      let error = JSON.parse(err._body);
+      alert(error.message);
     })
     
   }

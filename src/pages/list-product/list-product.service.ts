@@ -14,7 +14,7 @@ import { LogServiceProvider } from '../../providers/log-service/log-service';
 export class ListProductServiceProvider {
 
 
-  apiUrl: string = 'http://localhost:3000/';
+  apiUrl: string = 'https://coffeehubserver.herokuapp.com/';
   headers = new Headers({
     'Content-Type': 'application/json'
   });

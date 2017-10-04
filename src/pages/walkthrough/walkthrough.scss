@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
 walkthrough-page {
 	.walkthrough-header
 	{
@@ -48,16 +49,22 @@ walkthrough-page {
 			{
 				@include justify-content(center);
 				
-				// margin-top: 90px;
+				margin-top: 30px;
 				// margin-top: 16vh;
+				margin-right: 150px;
+				width: 280px;
+				height: 230px;
+				
 			}
 
 			.main-title
 			{
 				margin: 35px 20px 20px;
+				margin-top: -50px;
 				font-size: 3.4rem;
 				font-weight: 900;
-				font-style: italic;
+				// font-style: italic;
+				font-family: 'Quicksand', sans-serif;
 				text-align: center;
 				color: $white;
 			}
@@ -123,12 +130,14 @@ walkthrough-page {
 	}
 	.slide-1{
 		
-		background: url(https://i.pinimg.com/564x/04/7f/15/047f154565ecc65a5afd27c287debf15.jpg);
+		background: url(https://i.pinimg.com/564x/01/70/50/017050a095d30ce25eb954ef1f6bb0a9.jpg);
 		background-size:cover;
 		background-repeat: no-repeat;
+		// margin-top: 20px !important ;
 	}
 	.slide-2{
-		background: url(https://i.pinimg.com/564x/01/70/50/017050a095d30ce25eb954ef1f6bb0a9.jpg);
+		
+		background: url(https://i.pinimg.com/564x/04/7f/15/047f154565ecc65a5afd27c287debf15.jpg);
 		background-size:cover;
 		background-repeat: no-repeat;
 	}
@@ -136,5 +145,8 @@ walkthrough-page {
 		background: url(https://i.pinimg.com/564x/84/99/fe/8499fe54660200cf00899d70157fa42f.jpg);
 		background-size:cover;
 		background-repeat: no-repeat;
+	}
+	.logo{
+		padding: 60px 16px 16px 16px !important;
 	}
 }
