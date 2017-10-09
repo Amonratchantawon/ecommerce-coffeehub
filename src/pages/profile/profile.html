@@ -39,15 +39,15 @@
 
             <ion-item>
                 <ion-label stacked>{{ 'First Name' | translate }}</ion-label>
-                <ion-input [disabled]="isenabled" type="text" [(ngModel)]="profileData.firstName" placeholder="Amonrat"></ion-input>
+                <ion-input [disabled]="isenabled" type="text" [(ngModel)]="profileData.firstName" placeholder="{{users.firstName}}"></ion-input>
             </ion-item>
             <ion-item>
                 <ion-label stacked>{{ 'Last Name' | translate }}</ion-label>
-                <ion-input [disabled]="isenabled" type="text" [(ngModel)]="profileData.lastName" placeholder="Chantawon"></ion-input>
+                <ion-input [disabled]="isenabled" type="text" [(ngModel)]="profileData.lastName" placeholder="{{users.lastName}}"></ion-input>
             </ion-item>
             <ion-item>
                 <ion-label stacked>{{ 'E-mail' | translate }}</ion-label>
-                <ion-input [disabled]="isenabled" [(ngModel)]="profileData.email" rows="5" placeholder="anonataszx@outlook.co.th"></ion-input>
+                <ion-input [disabled]="isenabled" [(ngModel)]="profileData.email" rows="5" placeholder="{{users.email}}"></ion-input>
             </ion-item>
 
         </ion-list>

@@ -10,3 +10,6 @@ export class CartItemModel{
     qty:number;
     amount:number;
 };
+
+
+

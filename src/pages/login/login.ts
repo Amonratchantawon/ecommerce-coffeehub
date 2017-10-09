@@ -27,8 +27,8 @@ export class LoginPage {
     public toastProvider: ToastProvider) {
 
     this.login = new FormGroup({
-      username: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required)
+      username: new FormControl('amonratCha', Validators.required),
+      password: new FormControl('P@ssw0rd1234', Validators.required)
 
     });
   }
@@ -43,7 +43,9 @@ export class LoginPage {
     // alert(JSON.stringify(userdata));
 
     this.loginServiceProvider.onAuthorization(userdata).then((data)=>{
-      // alert(data.roles[0]);
+
+      window.localStorage.setItem('user',JSON.stringify(data));
+      
       if(data.roles[0] == 'user'){
         this.navCtrl.push(TabsNavigationPage);
       }else{

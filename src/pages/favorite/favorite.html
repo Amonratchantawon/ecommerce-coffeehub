@@ -22,13 +22,13 @@
     
     <ion-item-sliding>
       <ion-item class="carde-d">
-        <ion-avatar item-start>
-          <ion-grid>
+        <!-- <ion-avatar item-start> -->
+          <ion-grid class="col-full">
             <ion-row>
               <ion-col col-3 align-self-center class="image">
                 <img [src]="d.image" class="product-image">
               </ion-col>
-              <ion-col col-9>
+              <ion-col col-9 >
                 <h2>{{d.name}}</h2>
                 <p class="max-lines"> {{ d.descriptons }} </p>
                 <p class="price-rigth">
@@ -38,7 +38,7 @@
               </ion-col>
             </ion-row>
           </ion-grid>
-        </ion-avatar>
+        <!-- </ion-avatar> -->
       </ion-item>
       <ion-item-options side="right" class="btn-b">
         <button ion-button color="hecondary" (click)="getToProductDescriptionPage()">

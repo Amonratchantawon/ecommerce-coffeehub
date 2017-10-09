@@ -28,6 +28,8 @@ export class ProfilePage {
   isenabled: boolean = true;
   Edit ="create";
 
+  users:ProfileModel = new ProfileModel();
+
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public profileService: ProfileServiceProvider,
@@ -46,6 +48,15 @@ export class ProfilePage {
   ionViewDidLoad() {
     this.log.info('ionViewDidLoad ProfilePage');
     // this.getProfileData();
+    this.readData()
+  }
+
+  readData(){
+    this.users = JSON.parse(window.localStorage.getItem('user'));
+    // alert(JSON.stringify(this.users));
+    console.log(this.users.lastName);
+    console.log(this.users.firstName);
+    console.log(this.users.email);
   }
 
   // ionViewWillEnter() {
@@ -82,7 +93,6 @@ export class ProfilePage {
         this.isenabled=true;
       }
     }
-    
   }
 
 
@@ -95,8 +105,7 @@ export class ProfilePage {
           this.app.getRootNav().setRoot(WalkthroughPage);
           }, 1000);
         }
-      });
-      
+      });  
   }
 
   toggleNotifications() {
@@ -140,7 +149,6 @@ export class ProfilePage {
 
   takePicture() {
     const loading = this.loadingCtrl.create();
-
     loading.present();
     return this.cameraProvider.getPictureFromCamera().then(picture => {
       if (picture) {
@@ -154,7 +162,6 @@ export class ProfilePage {
 
   getPicture() {
     const loading = this.loadingCtrl.create();
-
     loading.present();
     return this.cameraProvider.getPictureFromPhotoLibrary().then(picture => {
       if (picture) {

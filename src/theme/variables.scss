@@ -22,7 +22,7 @@ $black-b: lighten($black, 20%);
 $black-c: lighten($black, 40%);
 $black-d: lighten($black, 60%);
 
-$theme-color-1: #588c7e;
+$theme-color-1: #4f3222;
 $theme-color-2: #ae75e7;
 $theme-color-3: #5e5874;
 
@@ -99,7 +99,7 @@ $colors: (
 // so that the above variables are used and Ionic's
 // default are overridden.
 
-$tabs-background: #588c7e;
+$tabs-background: #4f3222;
 
 .tabs-md .tab-button[aria-selected=true] .tab-button-icon {
   color: rgb(252, 246, 246) ;
@@ -113,7 +113,7 @@ $tabs-background: #588c7e;
 }
 
 .tabs-md .tab-button[aria-selected=true] {
-  background-color: #96ceb4 ;
+  background-color: #fff2df ;
   // opacity: 0.5;
   color: #f4f4f4 ;
 }
@@ -124,6 +124,18 @@ $tabs-background: #588c7e;
   color: #f4f4f4 ;
 }
 
+
+$tabs-ios-tab-text-color-active: #1F0404;
+$tabs-md-tab-text-color-active:#1B0505;
+
+$tabs-md-tab-icon-color: #f4f4f4;
+$tabs-ios-tab-icon-color: #f4f4f4;
+
+$tabs-ios-tab-text-color: #f4f4f4;
+$tabs-md-tab-text-color: #f4f4f4;
+
+$tabs-md-tab-icon-color-active: #000000;
+$tabs-ios-tab-icon-color-active: #000000;
 
 @import "ionic.theme.default";
 

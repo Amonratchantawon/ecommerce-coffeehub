@@ -1,3 +1,5 @@
+import { OrderStatusPage } from '../pages/order-status/order-status';
+import { PaymentPage } from '../pages/payment/payment';
 import { FavoriteServiceProvider } from '../providers/favorite-service/favorite-service';
 import { OrderProductDetailPage } from '../pages/order-product-detail/order-product-detail';
 import { CategoryPage } from '../pages/category/category';
@@ -104,10 +106,6 @@ import { AlertProvider } from '../providers/alert/alert';
 import { ToastProvider } from '../providers/toast/toast';
 import { CategoryServiceProvider } from '../providers/category-service/category-service';
 import { ListItemTestComponent } from '../components/list-item-test/list-item-test';
-
-import { AngularFireModule } from "angularfire2";
-import { FIREBASE_CRESENTIALS } from "./firebase.credentials";
-import { AngularFireDatabase } from 'angularfire2/database';
 import { CartProvider } from '../providers/cart/cart';
 
 export function createTranslateLoader(http: Http) {
@@ -153,12 +151,13 @@ export function createTranslateLoader(http: Http) {
     ProductDescriptionPage,
     CategoryPage,
     ListItemTestComponent,
-    OrderProductDetailPage
+    OrderProductDetailPage,
+    PaymentPage,
+    OrderStatusPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    AngularFireModule.initializeApp(FIREBASE_CRESENTIALS),
     IonicModule.forRoot(MyApp),
     Ionic2RatingModule,
     TranslateModule.forRoot({
@@ -190,7 +189,9 @@ export function createTranslateLoader(http: Http) {
     ManuPage,
     ProductDescriptionPage,
     CategoryPage,
-    OrderProductDetailPage
+    OrderProductDetailPage,
+    PaymentPage,
+    OrderStatusPage
 
   ],
   providers: [
@@ -198,7 +199,6 @@ export function createTranslateLoader(http: Http) {
     CartService,
     // GoogleMapsService,
     LanguageService,
-    AngularFireDatabase,
     SplashScreen,
     StatusBar,
     SocialSharing,

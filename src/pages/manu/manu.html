@@ -18,7 +18,7 @@
 
   <ion-row class="grid-items">
     <ion-col width-100 class="grid-item" *ngFor="let item of menuData">
-      <ion-slides pager="true" autoplay="3000" loop effect="flip">
+      <ion-slides pager="true" >
         <ion-slide *ngFor=" let g of item.image" >
           <background-image tappable class="item-heading" [src]="g" (click)="onClicktomenu(item)">
             <ion-row class="heading-row">
@@ -34,3 +34,5 @@
   </ion-row>
 
 </ion-content>
+
+<!-- autoplay="3000" loop effect="flip" -->

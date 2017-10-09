@@ -34,16 +34,18 @@ export class CartProvider {
           }
         }
       });
-
       if (status) {
         carts.items[index].qty++;
         carts.items[index].amount = carts.items[index].qty * carts.items[index].price;
+        console.log(JSON.stringify(carts.items));
         window.localStorage.setItem('cart', JSON.stringify(carts));
         return this.getCart();
       } else {
         prod = prod ? prod : {};
         prod.amount = prod.price * prod.qty;
         carts.items.push(prod);
+
+        console.log(JSON.stringify(carts.items));
         window.localStorage.setItem('cart', JSON.stringify(carts));
         return this.getCart();
       }
@@ -52,6 +54,7 @@ export class CartProvider {
       prod = prod ? prod : {};
       prod.amount = prod.price * prod.qty;
       carts.items.push(prod);
+      console.log(JSON.stringify(carts.items));
       window.localStorage.setItem('cart', JSON.stringify(carts));
       return this.getCart();
     }

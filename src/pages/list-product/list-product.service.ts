@@ -27,30 +27,6 @@ export class ListProductServiceProvider {
     this.log.info('Hello ListProductServiceProvider Provider');
   }
 
-  // getListProfile(): Promise<Array<ListProductModel>> {
-  //   return this.http.get('./assets/example_data/producttest.json')
-  //     .toPromise()
-  //     .then(response => response.json() as Array<ListProductModel>)
-  //     .catch(this.handleError);
-  // }
-
-  // private handleError(error: any): Promise<any> {
-  //   // this.log.errorService('An error occurred', error); // for demo purposes only
-  //   return Promise.reject(error.message || error);
-
-  // }
-
-  // getListProfile(): Promise<Array<ListProductModel>> {
-  //   return new Promise((resolve, reject) => {
-  //     this.http.get(this.apiUrl + 'api/products').map(res => {
-  //       return res.json();
-  //     }).subscribe(data => {
-  //       resolve(data);
-  //     }, (error) => {
-  //       reject(error);
-  //     });
-  //   })
-  // }
   postDataCategory(cateId): Promise<any> {
     return new Promise((resolve, reject) => {
         this.http.get(this.apiUrl + 'api/products/cate/'+ cateId ).map(res => {
