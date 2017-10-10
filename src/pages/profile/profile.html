@@ -30,7 +30,7 @@
                         Profile
                     </ion-col>
                     <ion-col col-6 class="btn-right">
-                        <button ion-button clear class="size-btn" (click)="clicktogglr()">
+                        <button ion-button clear class="size-btn" (click)="clicktogglr(users)">
                                 <ion-icon [name]="Edit" ></ion-icon>
                             </button>
                     </ion-col>
@@ -39,15 +39,15 @@
 
             <ion-item>
                 <ion-label stacked>{{ 'First Name' | translate }}</ion-label>
-                <ion-input [disabled]="isenabled" type="text" [(ngModel)]="profileData.firstName" placeholder="{{users.firstName}}"></ion-input>
+                <ion-input [disabled]="isenabled" type="text" [(ngModel)]="users.firstName" ></ion-input>
             </ion-item>
             <ion-item>
                 <ion-label stacked>{{ 'Last Name' | translate }}</ion-label>
-                <ion-input [disabled]="isenabled" type="text" [(ngModel)]="profileData.lastName" placeholder="{{users.lastName}}"></ion-input>
+                <ion-input [disabled]="isenabled" type="text" [(ngModel)]="users.lastName" ></ion-input>
             </ion-item>
             <ion-item>
                 <ion-label stacked>{{ 'E-mail' | translate }}</ion-label>
-                <ion-input [disabled]="isenabled" [(ngModel)]="profileData.email" rows="5" placeholder="{{users.email}}"></ion-input>
+                <ion-input [disabled]="isenabled" [(ngModel)]="users.email" rows="5" ></ion-input>
             </ion-item>
 
         </ion-list>

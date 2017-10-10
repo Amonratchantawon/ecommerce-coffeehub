@@ -35,7 +35,7 @@ export class OrderStatusPage {
   }
 
   submitOrder(){
-    this.oneSignal.startInit('e34e869d-a8fc-4bda-b8e3-183701c9c1b0', 'coffeehub-21dba');
+    this.oneSignal.startInit('488cf223-1990-454c-b12c-bc25ef275986', 'coffee-hub');
     
     this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
     

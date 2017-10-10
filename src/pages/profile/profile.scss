@@ -1,4 +1,8 @@
 page-profile {
+
+    .swiper-container {
+        height: initial;
+    }
     .settings-content {
         background-color: color($colors, background, base);
         .user-image-content {

@@ -1,3 +1,4 @@
+import { ProfileServiceProvider } from '../providers/profile-service/profile-service';
 import { OrderStatusPage } from '../pages/order-status/order-status';
 import { PaymentPage } from '../pages/payment/payment';
 import { FavoriteServiceProvider } from '../providers/favorite-service/favorite-service';
@@ -82,7 +83,6 @@ import { ShopDetailPage } from "../pages/shop-detail/shop-detail";
 import { TestComponent } from '../components/test/test';
 import { CartService } from "../pages/cart/cart.service";
 import { SearchServiceProvider } from '../pages/search/search.service';
-import { ProfileServiceProvider } from '../pages/profile/profile.service';
 import { ListProductServiceProvider } from '../pages/list-product/list-product.service';
 import { ListProductPage } from '../pages/list-product/list-product';
 import { ListShopsComponent } from '../components/list-shops/list-shops';
@@ -237,7 +237,8 @@ export function createTranslateLoader(http: Http) {
     CategoryServiceProvider,
     CartProvider,
     OneSignal,
-    FavoriteServiceProvider
+    FavoriteServiceProvider,
+    ProfileServiceProvider
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

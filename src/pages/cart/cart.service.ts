@@ -20,18 +20,6 @@ export class CartService {
     headers: this.headers
   });
 
-  // postDataProduct(data): Promise<any> {
-  //   return new Promise((resolve, reject) => {
-  //     this.http.post(this.apiUrl + 'api/orders',data).map(res => {
-  //       return res.json();
-  //     }).subscribe(data => {
-  //       resolve(data);
-  //     }, (error) => {
-  //       reject(error);
-  //     });
-  //   })
-  // }
-
 
   postDataProduct(order): Promise<any> {
  
@@ -46,20 +34,6 @@ export class CartService {
     this.log.errorService('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);
   }
-
-  // getData(): Promise<CartModel> {
-  //   return this.http.get('./assets/example_data/cart.json')
-  //    .toPromise()
-  //    .then(response => response.json() as CartModel)
-  //    .catch(this.handleError);
-  // }
-
-  // private handleError(error: any): Promise<any> {
-  //   this.log.errorService('An error occurred', error); // for demo purposes only
-  //   return Promise.reject(error.message || error);
-  // }
-
-  
 
 
 }

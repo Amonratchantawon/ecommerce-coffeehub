@@ -1,8 +1,8 @@
+import { ProfileServiceProvider } from '../../providers/profile-service/profile-service';
 import { WalkthroughPage } from '../walkthrough/walkthrough';
 import { Component } from '@angular/core';
-import { IonicPage,App, NavController, ActionSheetController, Platform, LoadingController, NavParams } from 'ionic-angular';
+import { IonicPage, App, NavController, ActionSheetController, Platform, LoadingController, NavParams } from 'ionic-angular';
 import { ProfileModel } from '../profile/profile.model';
-import { ProfileServiceProvider } from '../profile/profile.service';
 import { LogServiceProvider } from '../../providers/log-service/log-service';
 import { AuthorizeProvider } from "../../providers/authorize/authorize";
 import { CameraProvider } from "../../providers/camera/camera";
@@ -26,9 +26,11 @@ export class ProfilePage {
   enableNotifications: any;
   languages = ['English', 'Portuguese', 'French'];
   isenabled: boolean = true;
-  Edit ="create";
+  Edit = "create";
 
-  users:ProfileModel = new ProfileModel();
+  users: ProfileModel = new ProfileModel();
+
+  // userData :any;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -41,7 +43,7 @@ export class ProfilePage {
     public cameraProvider: CameraProvider,
     public alertService: AlertProvider,
     public toastProvider: ToastProvider,
-    private app:App
+    private app: App
   ) {
   }
 
@@ -51,13 +53,15 @@ export class ProfilePage {
     this.readData()
   }
 
-  readData(){
+  readData() {
     this.users = JSON.parse(window.localStorage.getItem('user'));
     // alert(JSON.stringify(this.users));
     console.log(this.users.lastName);
     console.log(this.users.firstName);
     console.log(this.users.email);
   }
+
+
 
   // ionViewWillEnter() {
   //   this.checkUser();
@@ -81,18 +85,26 @@ export class ProfilePage {
   //     });
   // }
 
-  clicktogglr(){
+  clicktogglr(users) {
     if (this.Edit == "create") {
       this.Edit = "checkbox-outline"
       if (this.isenabled == true) {
-        this.isenabled=false;
+        this.isenabled = false;
       }
     } else if (this.Edit == "checkbox-outline") {
       this.Edit = "create"
+      this.profileService.updateUser(this.users).then((data) => {
+        console.log(data);
+      }).catch((err) => {
+        console.log(err);
+      })
       if (this.isenabled == false) {
-        this.isenabled=true;
+        this.isenabled = true;
       }
     }
+
+
+
   }
 
 
@@ -101,11 +113,11 @@ export class ProfilePage {
       'This will log you out of this application.').then((yes) => {
         if (yes) {
           this.toastProvider.create('Logged out of the application');
-          setTimeout(()=> {
-          this.app.getRootNav().setRoot(WalkthroughPage);
+          setTimeout(() => {
+            this.app.getRootNav().setRoot(WalkthroughPage);
           }, 1000);
         }
-      });  
+      });
   }
 
   toggleNotifications() {
