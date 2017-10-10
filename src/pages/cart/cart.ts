@@ -12,6 +12,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { counterRangeValidator } from '../../components/counter-input/counter-input';
 import { LogServiceProvider } from '../../providers/log-service/log-service';
 
+import { Events } from 'ionic-angular';
 
 
 @Component({
@@ -38,8 +39,14 @@ export class CartPage {
     public loadingCtrl: LoadingController,
     public log: LogServiceProvider,
     public manuPVD: ManuProvider,
-    public cartProvider: CartProvider
+    public cartProvider: CartProvider,
+    public events:Events
   ) {
+
+    // events.subscribe('user:created', (user, time) => {
+    //   // user and time are the same arguments passed in `events.publish(user, time)`
+    //   this.order.items = [];
+    // });
 
   }
 
@@ -78,8 +85,9 @@ export class CartPage {
     console.log(addData.items);
 
     let users = JSON.parse(window.localStorage.getItem('user'));
-
-    this.order.orderStatus = 'waiting';
+    
+    this.order.shop = "59ba617e8ba1a7c439d2a478"
+    this.order.orderStatus = 'create';
     this.order.date = new Date();
     this.order.cupcoin = 20;
     this.order.user = users._id;
@@ -101,9 +109,12 @@ export class CartPage {
 
     this.cartService.postDataProduct(this.order).then((data)=>{
       console.log(data);
+      // this.order = null;
     }).catch((err)=>{
       console.log(err);
     })
+    alert("add order susses");
     this.navCtrl.push(OrderStatusPage,this.order)
+
   }
 }

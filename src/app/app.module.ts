@@ -108,6 +108,8 @@ import { CategoryServiceProvider } from '../providers/category-service/category-
 import { ListItemTestComponent } from '../components/list-item-test/list-item-test';
 import { CartProvider } from '../providers/cart/cart';
 
+import { OneSignal } from '@ionic-native/onesignal';
+
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -234,6 +236,7 @@ export function createTranslateLoader(http: Http) {
     ToastProvider,
     CategoryServiceProvider,
     CartProvider,
+    OneSignal,
     FavoriteServiceProvider
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
