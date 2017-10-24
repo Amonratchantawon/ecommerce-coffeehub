@@ -13,7 +13,7 @@ import { AuthorizeModel } from "./login.model";
 @Injectable()
 export class LoginServiceProvider {
 
-  apiUrl: string = 'https://coffeehubserver.herokuapp.com/';
+  apiUrl: string = 'https://coffeehubserver-test.herokuapp.com/';
   headers = new Headers({
     'Content-Type': 'application/json'
   });

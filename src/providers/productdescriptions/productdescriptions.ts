@@ -12,7 +12,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ProductdescriptionsProvider {
 
-  apiUrl: string = 'https://coffeehubserver.herokuapp.com/';
+  apiUrl: string = 'https://coffeehubserver-test.herokuapp.com/';
   headers = new Headers({
     'Content-Type': 'application/json'
   });

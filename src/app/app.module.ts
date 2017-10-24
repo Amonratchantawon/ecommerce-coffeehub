@@ -1,3 +1,4 @@
+import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
 import { ProfileServiceProvider } from '../providers/profile-service/profile-service';
 import { OrderStatusPage } from '../pages/order-status/order-status';
 import { PaymentPage } from '../pages/payment/payment';
@@ -109,6 +110,7 @@ import { ListItemTestComponent } from '../components/list-item-test/list-item-te
 import { CartProvider } from '../providers/cart/cart';
 
 import { OneSignal } from '@ionic-native/onesignal';
+import { ForgotpasswordProvider } from '../providers/forgotpassword/forgotpassword';
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -155,7 +157,8 @@ export function createTranslateLoader(http: Http) {
     ListItemTestComponent,
     OrderProductDetailPage,
     PaymentPage,
-    OrderStatusPage
+    OrderStatusPage,
+    ForgotPasswordPage
   ],
   imports: [
     BrowserModule,
@@ -193,7 +196,8 @@ export function createTranslateLoader(http: Http) {
     CategoryPage,
     OrderProductDetailPage,
     PaymentPage,
-    OrderStatusPage
+    OrderStatusPage,
+    ForgotPasswordPage
 
   ],
   providers: [
@@ -238,7 +242,8 @@ export function createTranslateLoader(http: Http) {
     CartProvider,
     OneSignal,
     FavoriteServiceProvider,
-    ProfileServiceProvider
+    ProfileServiceProvider,
+    ForgotpasswordProvider
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

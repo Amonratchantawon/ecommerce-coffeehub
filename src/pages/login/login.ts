@@ -1,3 +1,4 @@
+import { ForgotPasswordPage } from '../forgot-password/forgot-password';
 import { ToastProvider } from '../../providers/toast/toast';
 import { TabsNavigationPage } from '../tabs-navigation/tabs-navigation';
 import { Component } from '@angular/core';
@@ -61,6 +62,11 @@ export class LoginPage {
 
   goToSignup() {
     this.navCtrl.push(RegisterPage);
+  }
+
+  forgotPassword(){
+    this.navCtrl.push(ForgotPasswordPage);
+    
   }
 
 }

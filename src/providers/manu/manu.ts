@@ -14,7 +14,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class ManuProvider {
     public cartItems: Array<any> = new Array();
-    apiUrl: string = 'https://coffeehubserver.herokuapp.com/';
+    apiUrl: string = 'https://coffeehubserver-test.herokuapp.com/';
     headers = new Headers({
         'Content-Type': 'application/json'
     });
