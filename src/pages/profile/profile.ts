@@ -9,6 +9,9 @@ import { CameraProvider } from "../../providers/camera/camera";
 import { AlertProvider } from "../../providers/alert/alert";
 import { ToastProvider } from "../../providers/toast/toast";
 
+import { LoginPage } from "../login/login";
+import { AuthProvider } from "../../providers/auth/auth";
+
 /**
  * Generated class for the ProfilePage page.
  *
@@ -30,6 +33,8 @@ export class ProfilePage {
 
   users: ProfileModel = new ProfileModel();
 
+  data:string;
+
   // userData :any;
 
   constructor(public navCtrl: NavController,
@@ -43,8 +48,12 @@ export class ProfilePage {
     public cameraProvider: CameraProvider,
     public alertService: AlertProvider,
     public toastProvider: ToastProvider,
-    private app: App
+    private app: App,
+    private auth:AuthProvider
   ) {
+    this.auth.private().subscribe(data =>{
+      console.log(data);
+    })
   }
 
   ionViewDidLoad() {
@@ -114,6 +123,7 @@ export class ProfilePage {
         if (yes) {
           this.toastProvider.create('Logged out of the application');
           setTimeout(() => {
+            this.auth.logout();
             this.app.getRootNav().setRoot(WalkthroughPage);
           }, 1000);
         }

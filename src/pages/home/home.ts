@@ -13,6 +13,8 @@ import { ShopDetailPage } from "../shop-detail/shop-detail";
 import { ListProductPage } from '../list-product/list-product';
 import { ListShopPage } from '../list-shop/list-shop';
 import { LogServiceProvider } from '../../providers/log-service/log-service';
+
+
 /**
  * Generated class for the HomePage page.
  *

@@ -11,7 +11,9 @@ import { HomePage } from "../pages/home/home";
 
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { TabsNavigationPage } from "../pages/tabs-navigation/tabs-navigation";
-
+//logintoken
+import { LoginPage } from "../pages/login/login";
+import { AuthProvider } from "../providers/auth/auth";
 
 @Component({
   selector: 'app-root',
@@ -27,11 +29,11 @@ export class MyApp {
   //  rootPage: any = CategoryPage;
   // rootPage: any = TabsNavigationPage;
 
-  
+
   textDir: string = "ltr";
 
-  pages: Array<{title: any, icon: string, component: any}>;
-  pushPages: Array<{title: any, icon: string, component: any}>;
+  pages: Array<{ title: any, icon: string, component: any }>;
+  pushPages: Array<{ title: any, icon: string, component: any }>;
 
   constructor(
     platform: Platform,
@@ -40,8 +42,14 @@ export class MyApp {
     public splashScreen: SplashScreen,
     public statusBar: StatusBar,
     public translate: TranslateService,
-    public toastCtrl: ToastController
+    public toastCtrl: ToastController,
+    private auth: AuthProvider
   ) {
+    if (this.auth.isLogged() === true) {
+      this.rootPage = HomePage;
+    }else{
+      this.rootPage = LoginPage;
+    }
     translate.setDefaultLang('th');
     translate.use('th');
 
@@ -52,20 +60,17 @@ export class MyApp {
       this.statusBar.styleDefault();
     });
 
-    this.translate.onLangChange.subscribe((event: LangChangeEvent) =>
-      {
-        if(event.lang == 'ar')
-        {
-          platform.setDir('rtl', true);
-          platform.setDir('ltr', false);
-        }
-        else
-        {
-          platform.setDir('ltr', true);
-          platform.setDir('rtl', false);
-        }
-        
-      });
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      if (event.lang == 'ar') {
+        platform.setDir('rtl', true);
+        platform.setDir('ltr', false);
+      }
+      else {
+        platform.setDir('ltr', true);
+        platform.setDir('rtl', false);
+      }
+
+    });
 
   }
 

@@ -111,6 +111,7 @@ import { CartProvider } from '../providers/cart/cart';
 
 import { OneSignal } from '@ionic-native/onesignal';
 import { ForgotpasswordProvider } from '../providers/forgotpassword/forgotpassword';
+import { AuthProvider } from "../providers/auth/auth";
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -243,7 +244,8 @@ export function createTranslateLoader(http: Http) {
     OneSignal,
     FavoriteServiceProvider,
     ProfileServiceProvider,
-    ForgotpasswordProvider
+    ForgotpasswordProvider,
+    AuthProvider
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
