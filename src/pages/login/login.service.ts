@@ -13,7 +13,7 @@ import { AuthorizeModel } from "./login.model";
 @Injectable()
 export class LoginServiceProvider {
 
-  apiUrl: string = 'https://coffeehubserver-test.herokuapp.com/';
+  apiUrl: string = 'https://coffeehubserver.herokuapp.com/';
   headers = new Headers({
     'Content-Type': 'application/json'
   });
@@ -25,22 +25,6 @@ export class LoginServiceProvider {
   constructor(public http: Http) {
     console.log('Hello LoginServiceProvider Provider');
   }
-
-  // onAuthorization(): Promise<AuthorizeModel> { // signup
-  //   return this.http.get('./assets/example_data/profile.json')
-  //     .toPromise()
-  //     .then(response => {
-  //       let data = response.json() as AuthorizeModel;
-  //       window.localStorage.setItem('e7e_ecommerce_buy_user', JSON.stringify(data));
-  //       return data;
-  //     })
-  //     .catch(this.handleError);
-  // }
-
-  // private handleError(error: any): Promise<any> {
-  //   console.error('An error occurred', error); // for demo purposes only
-  //   return Promise.reject(error.message || error);
-  // }
 
   onAuthorization(data): Promise<any> {
     return new Promise((resolve, reject) => {
