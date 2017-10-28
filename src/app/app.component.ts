@@ -46,9 +46,9 @@ export class MyApp {
     private auth: AuthProvider
   ) {
     if (this.auth.isLogged() === true) {
-      this.rootPage = HomePage;
+      this.rootPage = TabsNavigationPage;
     }else{
-      this.rootPage = LoginPage;
+      this.rootPage = WalkthroughPage;
     }
     translate.setDefaultLang('th');
     translate.use('th');
