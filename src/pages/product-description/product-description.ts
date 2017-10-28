@@ -30,6 +30,7 @@ import { Slides } from 'ionic-angular';
 export class ProductDescriptionPage {
 
   @ViewChild(Slides) slides: Slides;
+  public rate = 4;
 
   // Type:any;
   orderScollX: Array<ListProductModel> = new Array<ListProductModel>();
