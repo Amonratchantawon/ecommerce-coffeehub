@@ -47,7 +47,6 @@ export class LoginPage {
   }
 
   doLogin(data) {
-    // console.log(this.login.value.password);
     let userdata = { "username": this.login.value.username, "password": this.login.value.password };
     this.auth.login(userdata).subscribe(res =>{
       this.navCtrl.push(TabsNavigationPage);

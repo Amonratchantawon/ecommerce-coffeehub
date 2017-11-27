@@ -22,7 +22,7 @@ $black-b: lighten($black, 20%);
 $black-c: lighten($black, 40%);
 $black-d: lighten($black, 60%);
 
-$theme-color-1: #4f3222;
+$theme-color-1: #fec600;
 $theme-color-2: #ae75e7;
 $theme-color-3: #5e5874;
 
@@ -99,7 +99,7 @@ $colors: (
 // so that the above variables are used and Ionic's
 // default are overridden.
 
-$tabs-background: #4f3222;
+$tabs-background: #fec600;
 
 .tabs-md .tab-button[aria-selected=true] .tab-button-icon {
   color: rgb(252, 246, 246) ;

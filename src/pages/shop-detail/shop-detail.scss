@@ -10,7 +10,7 @@
 }
 
 page-shop-detail {
- $contact-card-slides-height: 45%;
+    $contact-card-slides-height: 45%;
     $categories-heading-image-height: 150px;
     $categories-grid-padding: 10px;
     $categories-horizontal-list-padding: 10px;
@@ -175,10 +175,15 @@ page-shop-detail {
             padding: 0px 0px 0px $categories-horizontal-list-padding;
         }
     }
-    .see-all{
-  color: #00e9d5;
-  position: absolute;
-  right: 0;
-  margin-right: 12px;
- }
+    .see-all {
+        color: #00e9d5;
+        position: absolute;
+        right: 0;
+        margin-right: 12px;
+    }
+    ion-row.contact-details-row.row {
+        z-index: 1 !important;
+        margin-top: -104px !important;
+        position: relative !important ;
+    }
 }

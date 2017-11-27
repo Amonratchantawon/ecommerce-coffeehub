@@ -7,20 +7,41 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{'HOME' | translate}}</ion-title>
+    <button ion-button icon-only clear>
+      <ion-icon name="home"></ion-icon>
+    </button>
+    <ion-title>
+      <ion-searchbar></ion-searchbar>
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only clear end>
+        <ion-icon name="chatbubbles"></ion-icon>
+      </button>
+    </ion-buttons>
+
+
   </ion-navbar>
+
 
 </ion-header>
 
 <ion-content>
   <ads-header-bar [images]="datahome.images"></ads-header-bar>
-  <h4 class="categories-title">{{'LASTVISIT' | translate}} <span class="see-all" (click)="openPageProductList()">see all</span></h4>
+  <h4 class="categories-title">{{'LASTVISIT' | translate}}
+    <span class="see-all" (click)="openPageProductList()">see all</span>
+  </h4>
   <list-scoll-x [populars]="home" (selectedItem)="selectedItem($event)"></list-scoll-x>
 
-  <h4 class="categories-title">{{'SHOP' | translate}} <span class="see-all" (click)="openPageShopList()">see all</span></h4>
+  <h4 class="categories-title">{{'SHOP' | translate}}
+    <span class="see-all" (click)="openPageShopList()">see all</span>
+  </h4>
   <list-grid [items]="datahome.popularshops" (selectedItem)="selectedShop($event)"></list-grid>
-  <h4 class="categories-title">{{'POPULAR' | translate}} <span class="see-all" (click)="openPageProductList()">see all</span></h4>
+  <h4 class="categories-title">{{'POPULAR' | translate}}
+    <span class="see-all" (click)="openPageProductList()">see all</span>
+  </h4>
   <list-scoll-x [populars]="home" (selectedItem)="selectedItem($event)"></list-scoll-x>
-  <h4 class="categories-title">{{'BESTSELLER' | translate}} <span class="see-all" (click)="openPageProductList()">see all</span></h4>
+  <h4 class="categories-title">{{'BESTSELLER' | translate}}
+    <span class="see-all" (click)="openPageProductList()">see all</span>
+  </h4>
   <list-scoll-x [populars]="home" (selectedItem)="selectedItem($event)"></list-scoll-x>
 </ion-content>
