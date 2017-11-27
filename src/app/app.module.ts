@@ -164,7 +164,10 @@ export function createTranslateLoader(http: Http) {
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {
+      iconMode: "ios"
+
+    }),
     Ionic2RatingModule,
     TranslateModule.forRoot({
       loader: {
